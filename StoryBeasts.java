@@ -1,7 +1,21 @@
+import java.util.LinkedHashMap;
+
 public class StoryBeasts {
     int countbeasts = 1;
     private static String traces = "следы ";
+    public ScaryBeast zerobeast = new ScaryBeast("Первый страшный зверь");
+    public ScaryBeast firstbeast = new ScaryBeast("Второй страшный зверь");
+    public ScaryBeast secondbeast = new ScaryBeast("Третий страшный зверь");
+    public UnknownBeast thirdbeast = new UnknownBeast("Первый неизвестный зверь");
+    public UnknownBeast fourthbeast = new UnknownBeast("Второй неизвестный зверь");
+    public UnknownBeast fifthbeast = new UnknownBeast("Третий неизвестный зверь");
 
+
+    public creation(int a){
+        for (int i = 0; i<a; i++){
+            Beasts beasts = new Be\
+        }
+    }
     private class StoryTraces {
         void trace() {
             System.out.print("Потому что были " + traces);
@@ -11,7 +25,8 @@ public class StoryBeasts {
             System.out.println(traces + "немного путались ");
         }
     }
-      StoryTraces storyTraces = new StoryTraces();
+
+    StoryTraces storyTraces = new StoryTraces();
 
     private static class Paws {
         static int countpaws = 4;
@@ -27,19 +42,18 @@ public class StoryBeasts {
     }
 
     public void becoming() {
-        ScaryBeast[] sbeast = new ScaryBeast[3];
-        sbeast[0] = new ScaryBeast("Страшный зверь");
-        sbeast[1] = new ScaryBeast("Страшный зверь");
-        sbeast[2] = new ScaryBeast("Страшный зверь");
-        UnknownBeast[] ubeast = new UnknownBeast[3];
-        ubeast[0] = new UnknownBeast("Неизвестный зверь");
-        ubeast[1] = new UnknownBeast("Неизвестный зверь");
-        ubeast[2] = new UnknownBeast("Неизвестный зверь");
+        LinkedHashMap<Integer, Beasts> beasts = new LinkedHashMap<>();
+        beasts.put(0, zerobeast);
+        beasts.put(1, firstbeast);
+        beasts.put(2, secondbeast);
+        beasts.put(3, thirdbeast);
+        beasts.put(4, fourthbeast);
+        beasts.put(5, fifthbeast);
         if (Math.random() > 0.1D) {
-            System.out.print("Потому что " + ubeast[0]);
+            System.out.print("Потому что " + beasts.get(3));
             System.out.println(" могли оказаться ");
             for (int i = 0; i < 3; i++) {
-                System.out.println(sbeast[i]);
+                System.out.println(beasts.get(0));
             }
         } else System.out.println("Потому что боялись ");
     }

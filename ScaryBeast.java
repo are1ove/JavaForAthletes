@@ -1,5 +1,4 @@
-public class ScaryBeast implements NameCharacter {
-    public static String name;
+public class ScaryBeast extends Beasts{
     private Object varA;
     private Object varB;
     private int varC;

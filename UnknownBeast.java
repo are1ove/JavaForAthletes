@@ -1,6 +1,4 @@
-public class UnknownBeast implements NameCharacter {
-
-    public static String name;
+public class UnknownBeast extends Beasts {
 
     public UnknownBeast(String name) {
         this.name = name;
