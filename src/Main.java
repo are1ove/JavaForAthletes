@@ -1,9 +1,12 @@
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
 
 
-    public static void main(String[] args) throws FearException {
+    public static void main(String[] args) throws FearException, IOException {
+
+
 
         StoryWinnieAndPiglet storyWinnieAndPiglet = new StoryWinnieAndPiglet();
         StoryGrandFather storyGrandFather = new StoryGrandFather();

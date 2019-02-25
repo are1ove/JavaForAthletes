@@ -1,21 +1,12 @@
+import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 
 public class StoryBeasts {
-    int countbeasts = 1;
+    int countbeasts = 0;
     private static String traces = "следы ";
-    public ScaryBeast zerobeast = new ScaryBeast("Первый страшный зверь");
-    public ScaryBeast firstbeast = new ScaryBeast("Второй страшный зверь");
-    public ScaryBeast secondbeast = new ScaryBeast("Третий страшный зверь");
-    public UnknownBeast thirdbeast = new UnknownBeast("Первый неизвестный зверь");
-    public UnknownBeast fourthbeast = new UnknownBeast("Второй неизвестный зверь");
-    public UnknownBeast fifthbeast = new UnknownBeast("Третий неизвестный зверь");
 
-
-    public creation(int a){
-        for (int i = 0; i<a; i++){
-            Beasts beasts = new Be\
-        }
-    }
     private class StoryTraces {
         void trace() {
             System.out.print("Потому что были " + traces);
@@ -41,14 +32,57 @@ public class StoryBeasts {
         }
     }
 
-    public void becoming() {
+    public void becoming() throws IOException{
+        Scanner scanner= new Scanner(System.in);
+
+        FileInputStream fis = new FileInputStream(new File(scanner.nextLine()));
+        InputStreamReader reader = new InputStreamReader(fis);
+
+        ArrayList<String> inpStrings = new ArrayList<>();
+
+        int data;
+        StringBuilder tempString = new StringBuilder();
+        while (true){
+            data = reader.read();
+            if (data == -1) break;
+            char curChar = (char) data;
+            switch (curChar) {
+                case '\n': {
+                    inpStrings.add(tempString.toString());
+                    tempString = new StringBuilder();
+                    break;
+                }
+                case '{': continue;
+                case '}': continue;
+                case ',': continue;
+                case ' ': continue;
+                default : {
+                    tempString.append(curChar);
+                    break;
+                }
+            }
+
+        }
+        reader.close();
+        for (int i = 0; i<inpStrings.size(); i++) {
+            if ((Boolean) inpStrings.get(i).contains()){
+                continue;
+            }
+            System.out.println(inpStrings.get(i));
+        }
         LinkedHashMap<Integer, Beasts> beasts = new LinkedHashMap<>();
-        beasts.put(0, zerobeast);
-        beasts.put(1, firstbeast);
-        beasts.put(2, secondbeast);
-        beasts.put(3, thirdbeast);
-        beasts.put(4, fourthbeast);
-        beasts.put(5, fifthbeast);
+
+        for (int i=0;i<=inpStrings.lastIndexOf(inpStrings);i++){
+            if (inpStrings.get(i)=="name"){
+                inpStrings.remove(i);
+            }
+            beasts.put(i,new ScaryBeast("ЖИВОТНОЕ"));
+            inpStrings.get(i);
+        }
+        System.out.println(beasts);
+       /* for (int i=0; i) {
+            beasts.put(countbeasts, new ScaryBeast(name));//name-имя обьекта из файла
+        }
         if (Math.random() > 0.1D) {
             System.out.print("Потому что " + beasts.get(3));
             System.out.println(" могли оказаться ");
@@ -56,6 +90,7 @@ public class StoryBeasts {
                 System.out.println(beasts.get(0));
             }
         } else System.out.println("Потому что боялись ");
+        */
     }
 
     public void steps() throws FearException {
