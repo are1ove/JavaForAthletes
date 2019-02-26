@@ -24,12 +24,13 @@ public class Main {
         meeting.startEvent();
         loveStory.loving();
         storyWinnieAndPiglet.suddenlystop();
-        try {
+        /*try {
             storyBeasts.steps();
         } catch (FearException e) {
             storyBeasts.countbeasts=4;
             throw e;
         }
+        */
     }
 }
 

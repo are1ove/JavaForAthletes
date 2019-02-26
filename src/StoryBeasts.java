@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
@@ -32,8 +33,8 @@ public class StoryBeasts {
         }
     }
 
-    public void becoming() throws IOException{
-        Scanner scanner= new Scanner(System.in);
+    public void becoming() throws IOException {
+        Scanner scanner = new Scanner(System.in);
 
         FileInputStream fis = new FileInputStream(new File(scanner.nextLine()));
         InputStreamReader reader = new InputStreamReader(fis);
@@ -42,7 +43,7 @@ public class StoryBeasts {
 
         int data;
         StringBuilder tempString = new StringBuilder();
-        while (true){
+        while (true) {
             data = reader.read();
             if (data == -1) break;
             char curChar = (char) data;
@@ -52,11 +53,15 @@ public class StoryBeasts {
                     tempString = new StringBuilder();
                     break;
                 }
-                case '{': continue;
-                case '}': continue;
-                case ',': continue;
-                case ' ': continue;
-                default : {
+                case '{':
+                    continue;
+                case '}':
+                    continue;
+                case ',':
+                    continue;
+                case ' ':
+                    continue;
+                default: {
                     tempString.append(curChar);
                     break;
                 }
@@ -64,23 +69,21 @@ public class StoryBeasts {
 
         }
         reader.close();
-        for (int i = 0; i<inpStrings.size(); i++) {
-            if ((Boolean) inpStrings.get(i).contains()){
-                continue;
-            }
-            System.out.println(inpStrings.get(i));
-        }
+
         LinkedHashMap<Integer, Beasts> beasts = new LinkedHashMap<>();
 
-        for (int i=0;i<=inpStrings.lastIndexOf(inpStrings);i++){
-            if (inpStrings.get(i)=="name"){
-                inpStrings.remove(i);
+        for (int i = 0; i < inpStrings.size(); i++) {
+            if (inpStrings.get(i).contains("name")) {
+
+                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":")+1);
+                inpStrings.set(i,str);
+                beasts.put(i, new ScaryBeast(str));
             }
-            beasts.put(i,new ScaryBeast("ЖИВОТНОЕ"));
-            inpStrings.get(i);
+
         }
         System.out.println(beasts);
-       /* for (int i=0; i) {
+        System.out.println(inpStrings);
+        /* for (int i=0; i) {
             beasts.put(countbeasts, new ScaryBeast(name));//name-имя обьекта из файла
         }
         if (Math.random() > 0.1D) {
@@ -91,24 +94,27 @@ public class StoryBeasts {
             }
         } else System.out.println("Потому что боялись ");
         */
-    }
 
-    public void steps() throws FearException {
 
-        while (countbeasts < 4) {
-            countbeasts++;
-            storyTraces.trace();
-            System.out.println(countbeasts + " зверей!");
-        }
-        System.out.println("Уже " + countbeasts + " зверя!!! ");
-        storyTraces.action();
-        Paws paws = new Paws() {
-            public void sure() {
-                System.out.print("Но совершенно несомненно ");
+       /* public void steps() throws FearException {
+
+            while (countbeasts < 4) {
+                countbeasts++;
+                storyTraces.trace();
+                System.out.println(countbeasts + " зверей!");
             }
-        };
-        if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
-        paws.sure();
-        paws.was();
+            System.out.println("Уже " + countbeasts + " зверя!!! ");
+            storyTraces.action();
+            Paws paws = new Paws() {
+                public void sure() {
+                    System.out.print("Но совершенно несомненно ");
+                }
+            };
+            if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
+            paws.sure();
+            paws.was();
+
+        }*/
+
     }
 }
