@@ -59,8 +59,6 @@ public class StoryBeasts {
                     continue;
                 case ',':
                     continue;
-                case ' ':
-                    continue;
                 default: {
                     tempString.append(curChar);
                     break;
@@ -74,8 +72,7 @@ public class StoryBeasts {
 
         for (int i = 0; i < inpStrings.size(); i++) {
             if (inpStrings.get(i).contains("name")) {
-
-                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":")+1);
+                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":")+3, inpStrings.get(i).length() - 1);
                 inpStrings.set(i,str);
                 beasts.put(i, new ScaryBeast(str));
             }
@@ -97,7 +94,6 @@ public class StoryBeasts {
 
 
        /* public void steps() throws FearException {
-
             while (countbeasts < 4) {
                 countbeasts++;
                 storyTraces.trace();
@@ -113,7 +109,6 @@ public class StoryBeasts {
             if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
             paws.sure();
             paws.was();
-
         }*/
 
     }
