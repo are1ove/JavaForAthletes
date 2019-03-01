@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -49,11 +50,14 @@ public class Main {
                     for (int i = Integer.parseInt(text); i <= size; i++) {
                         storyBeasts.beasts.remove("Зверь" + i);
                     }
-
+                case "show":
+                    //int size = storyBeasts.beasts.size();
+                    for (int i = 1; i <= storyBeasts.beasts.size(); i++) {
+                        System.out.println(storyBeasts.beasts.get("Зверь" + i));
+                    }
                 default:
                     System.out.println(" ");
             }
-            System.out.println(storyBeasts.beasts);
         /*try {
             storyBeasts.steps();
         } catch (FearException e) {
