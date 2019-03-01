@@ -1,7 +1,6 @@
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -61,6 +60,22 @@ public class Main {
                     text = line.substring(data[0].length() + 1);
                     storyBeasts.beasts.remove("Зверь" + text);
                     break;
+                case "save":
+                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
+                        Set set = storyBeasts.beasts.entrySet();
+                        for (Object element : set) {
+                            Map.Entry mapEntry = (Map.Entry) element;
+                            final char dm = (char) 34;
+                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                            byte[] buffer = inptext.getBytes();
+                            fos.write(buffer, 0, buffer.length);
+                            System.out.println("name: " + mapEntry.getValue());
+                        }
+                    } catch (IOException ex) {
+
+                        System.out.println(ex.getMessage());
+                    }
+
                 default:
                     System.out.println(" ");
             }
