@@ -1,60 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="First step to console application">
-      <change beforePath="$PROJECT_DIR$/.idea/JavaForAthletes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JavaForAthletes.iml" afterDir="false" />
+    <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Beasts.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Beasts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/ScaryBeast.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/ScaryBeast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts$Paws.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts$Paws.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts$StoryTraces.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts$StoryTraces.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/UnknownBeast.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/UnknownBeast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Beasts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/ChristopherRobin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/DadsDisease$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/DadsDisease.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/DegreeOfExcitement$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/DegreeOfExcitement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/DeseaseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/EventSequence$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/EventSequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/FearException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/GrandFatherUnauthorisedV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/LoveStory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/MainCharacter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Meeting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/NameCharacter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Piglet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/ScaryBeast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/SomeBeasts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StatesWinnieThePooh$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StatesWinnieThePooh.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryBeasts$Paws.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryBeasts$StoryTraces.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryBeasts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryGrandFather$Story1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryGrandFather$Story2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryGrandFather.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryWinnieAndPiglet$1Counter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/StoryWinnieAndPiglet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/UnknownBeast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/WinnieLove$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/WinnieLove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/WinnieThePooh.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/WishPiglet$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/WishPiglet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/Lab3/Новый документ.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beasts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beasts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScaryBeast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScaryBeast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StoryBeasts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StoryBeasts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnknownBeast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnknownBeast.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-349">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="440">
+              <caret line="48" column="74" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -119,6 +69,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/StoryBeasts.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -143,6 +94,11 @@
             <path>
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -158,7 +114,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551464242667" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551467412304" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -208,15 +164,24 @@
       <workItem from="1550751739955" duration="14000" />
       <workItem from="1550751807370" duration="317000" />
       <workItem from="1551463154983" duration="4000" />
-      <workItem from="1551463628844" duration="613000" />
+      <workItem from="1551463628844" duration="2896000" />
     </task>
+    <task id="LOCAL-00001" summary="First step to console application">
+      <created>1551464261523</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551464261523</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1223000" />
+    <option name="totallyTimeSpent" value="3506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -329,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-349">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="440">
+          <caret line="48" column="74" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
         </state>
       </provider>
     </entry>

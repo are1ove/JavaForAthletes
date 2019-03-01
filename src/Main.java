@@ -27,7 +27,7 @@ public class Main {
         loveStory.loving();
         storyWinnieAndPiglet.suddenlystop();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите команду");
+        System.out.println("*Введите команду*");
         while (true) {
             String line = scanner.nextLine();
             String[] data = line.split(" ");
@@ -35,7 +35,7 @@ public class Main {
             switch (data[0]) {
                 case "insert":
                     text = line.substring(data[0].length() + 1);
-                    String[] arraytext =text.split(" ");
+                    String[] arraytext = text.split(" ");
                     for (int i = 0; i < arraytext.length; i++) {
                         if (arraytext[i].contains("Страшный зверь")) {
                             storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[i]));
@@ -43,10 +43,17 @@ public class Main {
                             storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[i]));
                         }
                     }
+                case "remove_greater":
+                    text = line.substring(data[0].length() + 1);
+                    int size = storyBeasts.beasts.size();
+                    for (int i = Integer.parseInt(text); i <= size; i++) {
+                        storyBeasts.beasts.remove("Зверь" + i);
+                    }
+
                 default:
                     System.out.println(" ");
             }
-            System.out.println( storyBeasts.beasts);
+            System.out.println(storyBeasts.beasts);
         /*try {
             storyBeasts.steps();
         } catch (FearException e) {
