@@ -44,20 +44,27 @@ public class Main {
                             storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[i]));
                         }
                     }
+                    break;
                 case "remove_greater":
                     text = line.substring(data[0].length() + 1);
                     int size = storyBeasts.beasts.size();
                     for (int i = Integer.parseInt(text); i <= size; i++) {
                         storyBeasts.beasts.remove("Зверь" + i);
                     }
+                    break;
                 case "show":
-                    //int size = storyBeasts.beasts.size();
                     for (int i = 1; i <= storyBeasts.beasts.size(); i++) {
                         System.out.println(storyBeasts.beasts.get("Зверь" + i));
                     }
+                    break;
+                case "remove":
+                    text = line.substring(data[0].length() + 1);
+                    storyBeasts.beasts.remove("Зверь" + text);
+                    break;
                 default:
                     System.out.println(" ");
             }
+            System.out.println(storyBeasts.beasts);
         /*try {
             storyBeasts.steps();
         } catch (FearException e) {
