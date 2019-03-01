@@ -1,17 +1,15 @@
 public class UnknownBeast extends Beasts {
 
-    public UnknownBeast(String name) {
-        this.name = name;
+    public UnknownBeast(String name){
+        super(name);
     }
-
-
     @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
     @Override
     public String toString() {
-        return this.name;
+        return super.getName();
     }
 }

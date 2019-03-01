@@ -4,22 +4,22 @@ public class ScaryBeast extends Beasts{
     private int varC;
     private int varD;
 
-    public ScaryBeast(String name) {
-        this.name = name;
+    public ScaryBeast(String name){
+        super(name);
     }
-
 
     @Override
     public String getName() {
-        return name;
+        return super.getName();
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object obj) {
         if (ScaryBeast.name == UnknownBeast.name)
             return true;
         else return false;
     }
+*/
 
     @Override
     public int hashCode() {
@@ -32,7 +32,7 @@ public class ScaryBeast extends Beasts{
 
     @Override
     public String toString() {
-        return this.name;
+        return super.getName();
     }
 }
 

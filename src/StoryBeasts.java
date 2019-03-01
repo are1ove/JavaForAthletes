@@ -33,6 +33,8 @@ public class StoryBeasts {
         }
     }
 
+    LinkedHashMap<String, Beasts> beasts = new LinkedHashMap<>();
+
     public void becoming() throws IOException {
         Scanner scanner = new Scanner(System.in);
 
@@ -68,13 +70,14 @@ public class StoryBeasts {
         }
         reader.close();
 
-        LinkedHashMap<Integer, Beasts> beasts = new LinkedHashMap<>();
 
         for (int i = 0; i < inpStrings.size(); i++) {
             if (inpStrings.get(i).contains("name")) {
-                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":")+3, inpStrings.get(i).length() - 1);
-                inpStrings.set(i,str);
-                beasts.put(i, new ScaryBeast(str));
+                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 3, inpStrings.get(i).length() - 1);
+                inpStrings.set(i, str);
+                if (str.contains("Страшный зверь")) {
+                    beasts.put("Зверь" + i, new ScaryBeast(str));
+                } else beasts.put("Зверь" + i, new UnknownBeast(str));
             }
 
         }
