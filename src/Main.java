@@ -37,10 +37,15 @@ public class Main {
                     text = line.substring(data[0].length() + 1);
                     String[] arraytext = text.split(" ");
                     for (int i = 0; i < arraytext.length; i++) {
-                        if (arraytext[i].contains("Страшный зверь")) {
-                            storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[i]));
-                        } else {
-                            storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[i]));
+                        if (arraytext[i].contains("Страшный")) {
+                            storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[i]+" "+arraytext[i+1]+" "+arraytext[i+2]));
+                        } 
+                        else if (arraytext[i].contains("Неизвестный")) {
+                            storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[i]+" "+arraytext[i+1]+" "+arraytext[i+2]));
+                        }
+                        else{
+                            System.err.println("Неправильный ввод");
+                            break;
                         }
                     }
                     break;
