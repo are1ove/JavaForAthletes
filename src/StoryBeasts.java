@@ -100,13 +100,15 @@ public class StoryBeasts {
             }
 
         }
-        System.out.println(beasts);
 
         if (Math.random() > 0.1D) {
-            System.out.print("Потому что " + beasts.get(3));
+            System.out.print("Потому что ");
+            for (int i = 0; i < 3; i++) {
+                System.out.println(beasts.get("Зверь1"));
+            }
             System.out.println(" могли оказаться ");
             for (int i = 0; i < 3; i++) {
-                System.out.println(beasts.get(0));
+                System.out.println(beasts.get("Зверь0"));
             }
         } else System.out.println("Потому что боялись ");
     }
@@ -130,8 +132,6 @@ public class StoryBeasts {
     }
 
 
-
-
     /**
      * show: вывести в стандартный поток вывода все элементы коллекции в строковом представлении.
      *
@@ -141,7 +141,6 @@ public class StoryBeasts {
         Set set1 = beasts.entrySet();
         for (Object element : set1) {
             Map.Entry mapEntry = (Map.Entry) element;
-            System.out.println(mapEntry.getValue());
         }
     }
 
@@ -232,6 +231,7 @@ public class StoryBeasts {
         } else {
             System.err.println("Неправильный ввод");
         }
+        System.out.println("Появился"+beasts.get("Зверь"+keys.size()));
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
