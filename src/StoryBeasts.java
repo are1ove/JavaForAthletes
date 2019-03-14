@@ -80,7 +80,7 @@ public class StoryBeasts {
 
         for (int i = 0; i < inpStrings.size(); i++) {
             if (inpStrings.get(i).contains("name")) {
-                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 3, inpStrings.get(i).length() - 1);
+                String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 2, inpStrings.get(i).length() - 1);
                 inpStrings.set(i, str);
                 if (str.contains("Страшный зверь")) {
                     beasts.put("Зверь" + i, new ScaryBeast(str));
