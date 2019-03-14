@@ -50,13 +50,17 @@ public class Main {
                 case "remove_greater":
                     text = line.substring(data[0].length() + 1);
                     int size = storyBeasts.beasts.size();
-                    for (int i = Integer.parseInt(text); i < storyBeasts.keys.size(); i++) {
-                        storyBeasts.beasts.remove("Зверь" + storyBeasts.keys.indexOf("Зверь" + (i)));
+                    System.out.println(text);
+                    for (int i = Integer.parseInt(text); i < size; i++) {
+                        System.out.println(storyBeasts.beasts.get(storyBeasts.keys.get(i)));
+                        storyBeasts.beasts.remove(storyBeasts.keys.get(i));
                     }
                     System.out.println(storyBeasts.keys.toString());
                     break;
                 case "show":
-                    storyBeasts.beasts.values();
+                    for (int i = 0; i < storyBeasts.keys.size(); i++) {
+                        System.out.println(storyBeasts.beasts.get("Зверь" + storyBeasts.keys.get(i)));
+                    }
                     break;
 
                 case "save":
