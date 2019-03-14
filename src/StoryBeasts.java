@@ -92,11 +92,6 @@ public class StoryBeasts {
             }
 
         }
-        System.out.println(beasts);
-        System.out.println(inpStrings);
-        /* for (int i=0; i) {
-            beasts.put(countbeasts, new ScaryBeast(name));//name-имя обьекта из файла
-        }
         if (Math.random() > 0.1D) {
             System.out.print("Потому что " + beasts.get(3));
             System.out.println(" могли оказаться ");
@@ -104,26 +99,25 @@ public class StoryBeasts {
                 System.out.println(beasts.get(0));
             }
         } else System.out.println("Потому что боялись ");
-        */
-
-
-       /* public void steps() throws FearException {
-            while (countbeasts < 4) {
-                countbeasts++;
-                storyTraces.trace();
-                System.out.println(countbeasts + " зверей!");
-            }
-            System.out.println("Уже " + countbeasts + " зверя!!! ");
-            storyTraces.action();
-            Paws paws = new Paws() {
-                public void sure() {
-                    System.out.print("Но совершенно несомненно ");
-                }
-            };
-            if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
-            paws.sure();
-            paws.was();
-        }*/
-
     }
+
+
+    public void steps() throws FearException {
+        while (countbeasts < 4) {
+            countbeasts++;
+            storyTraces.trace();
+            System.out.println(countbeasts + " зверей!");
+        }
+        System.out.println("Уже " + countbeasts + " зверя!!! ");
+        storyTraces.action();
+        Paws paws = new Paws() {
+            public void sure() {
+                System.out.print("Но совершенно несомненно ");
+            }
+        };
+        if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
+        paws.sure();
+        paws.was();
+    }
+
 }
