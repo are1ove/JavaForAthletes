@@ -2,9 +2,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ *
+ * @author ilya
+ */
 public class Main {
 
-
+    /**
+     *
+     * @param args
+     * @throws FearException
+     * @throws IOException
+     */
     public static void main(String[] args) throws FearException, IOException {
 
         StoryWinnieAndPiglet storyWinnieAndPiglet = new StoryWinnieAndPiglet();
@@ -33,80 +42,42 @@ public class Main {
             String[] data = line.split(" ");
             String text;
             switch (data[0]) {
+
+
                 case "insert":
                     text = line.substring(data[0].length() + 1);
-                    String[] arraytext = text.split(" ");
-                    if (arraytext[1].contains("Страшный")) {
-                        storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                        storyBeasts.keys.add(arraytext[0]);
-                    } else if (arraytext[1].contains("Неизвестный")) {
-                        storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                        storyBeasts.keys.add(arraytext[0]);
-                    } else {
-                        System.err.println("Неправильный ввод");
-                        break;
-                    }
-                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
-                        Set set = storyBeasts.beasts.entrySet();
-                        for (Object element : set) {
-                            Map.Entry mapEntry = (Map.Entry) element;
-                            final char dm = (char) 34;
-                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                            byte[] buffer = inptext.getBytes();
-                            fos.write(buffer, 0, buffer.length);
-                        }
-                    } catch (IOException ex) {
-                        System.out.println(ex.getMessage());
-                    }
+                    storyBeasts.insert(text);
                     break;
+
                 case "remove_greater":
                     text = line.substring(data[0].length() + 1);
-                    int size = storyBeasts.beasts.size();
-                    System.out.println(text);
-                    for (int i = Integer.parseInt(text); i < size; i++) {
-                        System.out.println(storyBeasts.beasts.get(storyBeasts.keys.get(i)));
-                        storyBeasts.beasts.remove(storyBeasts.keys.get(i));
-
-                    }
-                    System.out.println(storyBeasts.keys.toString());
+                    storyBeasts.remove_greater(text);
                     break;
+
                 case "show":
-                    Set set1 = storyBeasts.beasts.entrySet();
-                    for (Object element : set1) {
-                        Map.Entry mapEntry = (Map.Entry) element;
-                        System.out.println(mapEntry.getValue());
-                    }
+                    storyBeasts.show();
                     break;
 
                 case "save":
-                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/SomeBeasts.json")) {
-                        Set set = storyBeasts.beasts.entrySet();
-                        for (Object element : set) {
-                            Map.Entry mapEntry = (Map.Entry) element;
-                            final char dm = (char) 34;
-                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                            byte[] buffer = inptext.getBytes();
-                            fos.write(buffer, 0, buffer.length);
-                        }
-                    } catch (IOException ex) {
-                        System.out.println(ex.getMessage());
-                    }
+                    storyBeasts.save();
                     break;
+
                 case "info":
-                    System.out.println("Тип коллекции: " + storyBeasts.beasts.getClass());
-                    System.out.println("Количество элементов в коллекции: " + storyBeasts.beasts.size());
-                    System.out.println("Дата создания: " + storyBeasts.CREATE_DATE);
+                    storyBeasts.info();
                     break;
+
                 case "remove":
                     text = line.substring(data[0].length() + 1);
-                    storyBeasts.beasts.remove(text);
+                    storyBeasts.remove(text);
                     break;
+
                 case "load":
                     storyBeasts.becoming();
                     break;
                 default:
                     printHelp();
             }
+            System.out.println(storyBeasts.beasts);
         try {
             storyBeasts.steps();
         } catch (FearException e) {
@@ -117,7 +88,10 @@ public class Main {
         }
 
     }
-
+    /**
+     * Помощь в командах.
+     * @since 1.0
+     */
     private static void printHelp() {
         System.out.println("insert {String key} {element} - добавить новый элемент с заданным ключом");
         System.out.println("remove_greater {element} - удалить из коллекции все элементы, превышающие заданный");
