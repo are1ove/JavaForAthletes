@@ -1,12 +1,18 @@
 import java.io.*;
 import java.lang.annotation.Documented;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class StoryBeasts {
     int countbeasts = 0;
+    public final Date CREATE_DATE;
     private static String traces = "следы ";
+
+    public StoryBeasts() {
+        CREATE_DATE = new Date();
+    }
 
     private class StoryTraces {
         void trace() {
@@ -34,6 +40,7 @@ public class StoryBeasts {
     }
 
     LinkedHashMap<String, Beasts> beasts = new LinkedHashMap<>();
+    ArrayList<String> keys = new ArrayList<>();
 
     public void becoming() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -77,7 +84,11 @@ public class StoryBeasts {
                 inpStrings.set(i, str);
                 if (str.contains("Страшный зверь")) {
                     beasts.put("Зверь" + i, new ScaryBeast(str));
-                } else beasts.put("Зверь" + i, new UnknownBeast(str));
+                    keys.add("Зверь" + i);
+                } else {
+                    beasts.put("Зверь" + i, new UnknownBeast(str));
+                    keys.add("Зверь" + i);
+                }
             }
 
         }

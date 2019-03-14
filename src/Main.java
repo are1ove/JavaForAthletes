@@ -36,31 +36,58 @@ public class Main {
                 case "insert":
                     text = line.substring(data[0].length() + 1);
                     String[] arraytext = text.split(" ");
-                    for (int i = 0; i < arraytext.length; i++) {
-                        if (arraytext[i].contains("Страшный зверь")) {
-                            storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[i]));
-                        } else {
-                            storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[i]));
-                        }
+                    if (arraytext[1].contains("Страшный")) {
+                        storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                    } else if (arraytext[1].contains("Неизвестный")) {
+                        storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                    } else {
+                        System.err.println("Неправильный ввод");
+                        break;
                     }
                     break;
                 case "remove_greater":
                     text = line.substring(data[0].length() + 1);
                     int size = storyBeasts.beasts.size();
-                    for (int i = Integer.parseInt(text); i <= size; i++) {
-                        storyBeasts.beasts.remove("Зверь" + i);
+                    for (int i = Integer.parseInt(text); i < storyBeasts.keys.size(); i++) {
+                        storyBeasts.beasts.remove("Зверь" + storyBeasts.keys.indexOf("Зверь" + (i)));
                     }
+                    System.out.println(storyBeasts.keys.toString());
                     break;
                 case "show":
-                    for (int i = 1; i <= storyBeasts.beasts.size(); i++) {
-                        System.out.println(storyBeasts.beasts.get("Зверь" + i));
+                    storyBeasts.beasts.values();
+                    break;
+
+                case "save":
+                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/SomeBeasts.json")) {
+                        Set set = storyBeasts.beasts.entrySet();
+                        for (Object element : set) {
+                            Map.Entry mapEntry = (Map.Entry) element;
+                            final char dm = (char) 34;
+                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                            byte[] buffer = inptext.getBytes();
+                            fos.write(buffer, 0, buffer.length);
+                            System.out.println("name: " + mapEntry.getValue());
+                        }
+                    } catch (IOException ex) {
+
+                        System.out.println(ex.getMessage());
                     }
+                    break;
+                case "info":
+                    System.out.println("Тип коллекции: " + storyBeasts.beasts.getClass());
+                    System.out.println("Количество элементов в коллекции: " + storyBeasts.beasts.size());
+                    System.out.println("Дата создания: " + storyBeasts.CREATE_DATE);
                     break;
                 case "remove":
                     text = line.substring(data[0].length() + 1);
                     storyBeasts.beasts.remove("Зверь" + text);
                     break;
-                case "save":
+                case "load":
+                    storyBeasts.becoming();
+                    break;
+                default:
                     try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
                         Set set = storyBeasts.beasts.entrySet();
                         for (Object element : set) {
@@ -75,9 +102,7 @@ public class Main {
 
                         System.out.println(ex.getMessage());
                     }
-
-                default:
-                    System.out.println(" ");
+                    ;
             }
             System.out.println(storyBeasts.beasts);
         /*try {
