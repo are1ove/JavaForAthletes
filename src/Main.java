@@ -46,6 +46,18 @@ public class Main {
                         System.err.println("Неправильный ввод");
                         break;
                     }
+                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
+                        Set set = storyBeasts.beasts.entrySet();
+                        for (Object element : set) {
+                            Map.Entry mapEntry = (Map.Entry) element;
+                            final char dm = (char) 34;
+                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                            byte[] buffer = inptext.getBytes();
+                            fos.write(buffer, 0, buffer.length);
+                        }
+                    } catch (IOException ex) {
+                        System.out.println(ex.getMessage());
+                    }
                     break;
                 case "remove_greater":
                     text = line.substring(data[0].length() + 1);
@@ -54,12 +66,15 @@ public class Main {
                     for (int i = Integer.parseInt(text); i < size; i++) {
                         System.out.println(storyBeasts.beasts.get(storyBeasts.keys.get(i)));
                         storyBeasts.beasts.remove(storyBeasts.keys.get(i));
+
                     }
                     System.out.println(storyBeasts.keys.toString());
                     break;
                 case "show":
-                    for (int i = 0; i < storyBeasts.keys.size(); i++) {
-                        System.out.println(storyBeasts.beasts.get("Зверь" + storyBeasts.keys.get(i)));
+                    Set set1 = storyBeasts.beasts.entrySet();
+                    for (Object element : set1) {
+                        Map.Entry mapEntry = (Map.Entry) element;
+                        System.out.println(mapEntry.getValue());
                     }
                     break;
 
@@ -72,10 +87,8 @@ public class Main {
                             String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
                             byte[] buffer = inptext.getBytes();
                             fos.write(buffer, 0, buffer.length);
-                            System.out.println("name: " + mapEntry.getValue());
                         }
                     } catch (IOException ex) {
-
                         System.out.println(ex.getMessage());
                     }
                     break;
@@ -86,27 +99,13 @@ public class Main {
                     break;
                 case "remove":
                     text = line.substring(data[0].length() + 1);
-                    storyBeasts.beasts.remove("Зверь" + text);
+                    storyBeasts.beasts.remove(text);
                     break;
                 case "load":
                     storyBeasts.becoming();
                     break;
                 default:
-                    try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
-                        Set set = storyBeasts.beasts.entrySet();
-                        for (Object element : set) {
-                            Map.Entry mapEntry = (Map.Entry) element;
-                            final char dm = (char) 34;
-                            String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                            byte[] buffer = inptext.getBytes();
-                            fos.write(buffer, 0, buffer.length);
-                            System.out.println("name: " + mapEntry.getValue());
-                        }
-                    } catch (IOException ex) {
-
-                        System.out.println(ex.getMessage());
-                    }
-                    ;
+                    printHelp();
             }
             System.out.println(storyBeasts.beasts);
         /*try {
@@ -117,6 +116,17 @@ public class Main {
         }
         */
         }
+
+    }
+
+    private static void printHelp() {
+        System.out.println("insert {String key} {element} - добавить новый элемент с заданным ключом");
+        System.out.println("remove_greater {element} - удалить из коллекции все элементы, превышающие заданный");
+        System.out.println("show - вывести в стандартный поток вывода все элементы коллекции в строковом представлении");
+        System.out.println("save - сохранить коллекцию в файл");
+        System.out.println("info - вывести в стандартный поток вывода информацию о коллекции");
+        System.out.println("remove {String key} - удалить элемент из коллекции по его ключу");
+        System.out.println("load - перечитать коллекцию из файла");
     }
 }
 

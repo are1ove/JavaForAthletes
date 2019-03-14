@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backupfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/backupfile.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="54" column="91" selection-start-line="54" selection-start-column="91" selection-end-line="54" selection-end-column="91" />
+            <state relative-caret-position="500">
+              <caret line="128" column="64" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -152,7 +151,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552590056668" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552591746383" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -207,7 +206,7 @@
       <workItem from="1551815187710" duration="279000" />
       <workItem from="1551856364058" duration="817000" />
       <workItem from="1552037724910" duration="150000" />
-      <workItem from="1552209368694" duration="14646000" />
+      <workItem from="1552209368694" duration="16468000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -258,16 +257,24 @@
       <option name="project" value="LOCAL" />
       <updated>1552586805898</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Final changes with commands 2.0">
+      <created>1552590127435</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552590127435</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26338000" />
+    <option name="totallyTimeSpent" value="28160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1502146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1502146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -276,7 +283,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26024097" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21445782" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,7 +348,8 @@
     <MESSAGE value="First step4 to console application(added remove)" />
     <MESSAGE value="I have done &quot;save&quot; function" />
     <MESSAGE value="Final changes with commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final changes with commands" />
+    <MESSAGE value="Final changes with commands 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final changes with commands 2.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Event.java" />
@@ -435,8 +443,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="54" column="91" selection-start-line="54" selection-start-column="91" selection-end-line="54" selection-end-column="91" />
+        <state relative-caret-position="500">
+          <caret line="128" column="64" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
         </state>
       </provider>
     </entry>
