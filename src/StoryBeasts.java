@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class StoryBeasts {
-    int countbeasts = 0;
+    int countbeasts;
     public final Date CREATE_DATE;
     private static String traces = "следы ";
 
@@ -28,18 +28,7 @@ public class StoryBeasts {
 
     StoryTraces storyTraces = new StoryTraces();
 
-    private static class Paws {
-        static int countpaws = 4;
-        static String kit = " комплектов ";
 
-        void was() {
-            System.out.println("это были " + traces + countpaws + kit + "лап");
-        }
-
-        public void sure() {
-            System.out.println("можно поставить под сомнение, что");
-        }
-    }
 
     LinkedHashMap<String, Beasts> beasts = new LinkedHashMap<>();
     ArrayList<String> keys = new ArrayList<>();
@@ -92,9 +81,11 @@ public class StoryBeasts {
                 inpStrings.set(i, str);
                 if (str.contains("Страшный зверь")) {
                     beasts.put("Зверь" + i, new ScaryBeast(str));
+                    countbeasts+=1;
                     keys.add("Зверь" + i);
                 } else {
                     beasts.put("Зверь" + i, new UnknownBeast(str));
+                    countbeasts+=1;
                     keys.add("Зверь" + i);
                 }
             }
@@ -113,20 +104,29 @@ public class StoryBeasts {
         } else System.out.println("Потому что боялись ");
     }
 
-    public void steps() throws FearException {
-        while (countbeasts < 4) {
-            countbeasts++;
-            storyTraces.trace();
-            System.out.println(countbeasts + " зверей!");
+    private static class Paws {
+        StoryBeasts storyBeasts = new StoryBeasts();
+        int countpaws =storyBeasts.beasts.size();
+        static String kit = " комплектов ";
+
+        void was() {
+            System.out.println("это были " + traces + countpaws + kit + "лап");
         }
-        System.out.println("Уже " + countbeasts + " зверя!!! ");
+
+        public void sure() {
+            System.out.println("можно поставить под сомнение, что");
+        }
+    }
+
+    public void steps() throws FearException {
+        System.out.println("Уже " + beasts.size() + " зверя!!! ");
         storyTraces.action();
         Paws paws = new Paws() {
             public void sure() {
                 System.out.print("Но совершенно несомненно ");
             }
         };
-        if (countbeasts < 4) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
+        if (countbeasts != beasts.size()) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
         paws.sure();
         paws.was();
     }
