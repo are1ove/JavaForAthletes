@@ -79,7 +79,6 @@ public class StoryBeasts {
         }
     }
     public void becoming() {
-
             for (int i = 0; i < inpStrings.size(); i++) {
                 if (inpStrings.get(i).contains("name")) {
                     String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 2, inpStrings.get(i).length() - 1);
