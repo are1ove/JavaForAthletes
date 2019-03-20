@@ -3,13 +3,11 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- *
  * @author ilya
  */
 public class Main {
 
     /**
-     *
      * @param args
      * @throws FearException
      * @throws IOException
@@ -43,15 +41,22 @@ public class Main {
             String text;
             switch (data[0]) {
 
-
                 case "insert":
-                    text = line.substring(data[0].length() + 1);
-                    storyBeasts.insert(text);
+                    if (line.equals("insert")) {
+                        System.err.println("Вы не ввели, кого вы хотите добавить в коллекцию");
+                    } else {
+                        text = line.substring(data[0].length() + 1);
+                        storyBeasts.insert(text);
+                    }
                     break;
 
                 case "remove_greater":
-                    text = line.substring(data[0].length() + 1);
-                    storyBeasts.remove_greater(text);
+                    if (line.equals("remove_greater")) {
+                        System.err.println("Вы не ввели, с какого элемента вы хотите удалить элементы из коллекции");
+                    } else {
+                        text = line.substring(data[0].length() + 1);
+                        storyBeasts.remove_greater(text);
+                    }
                     break;
 
                 case "show":
@@ -67,8 +72,12 @@ public class Main {
                     break;
 
                 case "remove":
-                    text = line.substring(data[0].length() + 1);
-                    storyBeasts.remove(text);
+                    if (line.equals("remove")) {
+                        System.err.println("Вы не ввели, какой элемент вы хотите удалить");
+                    } else {
+                        text = line.substring(data[0].length() + 1);
+                        storyBeasts.remove(text);
+                    }
                     break;
 
                 case "load":
@@ -77,15 +86,17 @@ public class Main {
                 default:
                     printHelp();
             }
-        
-        storyBeasts.steps();
-        
+
+            storyBeasts.steps();
+
 
         }
 
     }
+
     /**
      * Помощь в командах.
+     *
      * @since 1.0
      */
     private static void printHelp() {
