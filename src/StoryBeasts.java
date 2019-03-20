@@ -94,12 +94,12 @@ public class StoryBeasts {
 
         if (Math.random() > 0.1D) {
             System.out.print("Потому что ");
-            for (int i = 0; i < 3; i++) {
-                System.out.println(beasts.get("Зверь1"));
+            for (int i = 0; i < beasts.size()/2; i++) {
+                System.out.println(beasts.get("Зверь"+(i)));
             }
-            System.out.println(" могли оказаться ");
-            for (int i = 0; i < 3; i++) {
-                System.out.println(beasts.get("Зверь0"));
+            System.out.println("Могли оказаться ");
+            for (int i = beasts.size()/2; i < beasts.size(); i++) {
+                System.out.println(beasts.get("Зверь"+(i)));
             }
         } else System.out.println("Потому что боялись ");
     }
@@ -110,7 +110,7 @@ public class StoryBeasts {
         static String kit = " комплектов ";
 
         void was() {
-            System.out.println("это были " + traces + countpaws + kit + "лап");
+            System.out.println("это были " + traces + "их" + kit + "лап");
         }
 
         public void sure() {
@@ -118,7 +118,7 @@ public class StoryBeasts {
         }
     }
 
-    public void steps() throws FearException {
+    public void steps() {
         System.out.println("Уже " + beasts.size() + " зверя!!! ");
         storyTraces.action();
         Paws paws = new Paws() {
@@ -126,7 +126,6 @@ public class StoryBeasts {
                 System.out.print("Но совершенно несомненно ");
             }
         };
-        if (countbeasts != beasts.size()) throw new FearException("ПЕРЕСЧИТАЙТЕ КОЛИЧЕСТВО ЗВЕРЕЙ!");
         paws.sure();
         paws.was();
     }
@@ -138,9 +137,15 @@ public class StoryBeasts {
      * @since 1.0
      */
     public void show() {
-        Set set1 = beasts.entrySet();
-        for (Object element : set1) {
+        try{
+            Set set1 = beasts.entrySet();
+            for (Object element : set1) {
             Map.Entry mapEntry = (Map.Entry) element;
+            System.out.println(mapEntry);
+        }
+        }
+        catch(Exception e){
+            System.err.println("Неправильный ввод");
         }
     }
 
@@ -150,6 +155,7 @@ public class StoryBeasts {
      * @since 1.0
      */
     public void save() {
+        try{
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
@@ -163,6 +169,11 @@ public class StoryBeasts {
             System.out.println(ex.getMessage());
         }
     }
+        catch(Exception e){
+         System.err.println("Неправильный ввод");
+    }
+    }
+    
 
     /**
      * Метод info: вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
@@ -184,7 +195,14 @@ public class StoryBeasts {
      * @since 1.0
      */
     public void remove(String text) {
-        beasts.remove(text);
+        try {
+            if (beasts.containsKey(text)){
+            beasts.remove(text);
+            System.out.println("Элемент успешно удален");
+        }
+        else{
+           System.err.println("Неправильный ввод");
+        }
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
@@ -198,6 +216,10 @@ public class StoryBeasts {
             System.out.println(ex.getMessage());
         }
     }
+        catch (Exception e){
+            System.err.println("Неправильный ввод");
+        }
+    }
 
     /**
      * remove_greater_key {String key}: удалить из коллекции все элементы, ключ которых превышает заданный.
@@ -207,9 +229,15 @@ public class StoryBeasts {
      * @since 1.0
      */
     public void remove_greater(String text) {
-        int size = beasts.size();
+        try {
+            int size = beasts.size();
         for (int i = Integer.parseInt(text); i < size; i++) {
             beasts.remove(keys.get(i));
+        System.out.println("Зверь успешно удален");
+        }
+        }
+        catch(Exception e){
+            System.err.println("Неправильный ввод");
         }
     }
 
@@ -222,7 +250,8 @@ public class StoryBeasts {
      */
     public void insert(String text) {
         String[] arraytext = text.split(" ");
-        if (arraytext[1].contains("Страшный")) {
+        try { 
+            if (arraytext[1].contains("Страшный")) {
             beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
             keys.add(arraytext[0]);
         } else if (arraytext[1].contains("Неизвестный")) {
@@ -231,7 +260,11 @@ public class StoryBeasts {
         } else {
             System.err.println("Неправильный ввод");
         }
-        System.out.println("Появился"+beasts.get("Зверь"+keys.size()));
+        System.out.println("Зверь успешно добавлен");
+        }
+        catch (Exception ex){
+            System.err.println("Неправильный ввод");
+        }
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {

@@ -77,13 +77,9 @@ public class Main {
                 default:
                     printHelp();
             }
-            System.out.println(storyBeasts.beasts);
-        try {
-            storyBeasts.steps();
-        } catch (FearException e) {
-            storyBeasts.countbeasts=4;
-            throw e;
-        }
+        
+        storyBeasts.steps();
+        
 
         }
 
