@@ -38,14 +38,15 @@ public class StoryBeasts {
      *
      * @since 1.0
      */
-    public void becoming() {
+    ArrayList<String> inpStrings = new ArrayList<>();
+    public void load() {
         try {
             System.out.println("*Введите путь к json файлу*");
             Scanner scanner = new Scanner(System.in);
 
             FileInputStream fis = new FileInputStream(new File(scanner.nextLine()));
             InputStreamReader reader = new InputStreamReader(fis);
-            ArrayList<String> inpStrings = new ArrayList<>();
+
 
             int data;
             StringBuilder tempString = new StringBuilder();
@@ -73,7 +74,11 @@ public class StoryBeasts {
 
             }
             reader.close();
-
+        } catch (Exception e) {
+            System.err.println("Неправильный путь к файлу");
+        }
+    }
+    public void becoming() {
 
             for (int i = 0; i < inpStrings.size(); i++) {
                 if (inpStrings.get(i).contains("name")) {
@@ -103,10 +108,7 @@ public class StoryBeasts {
                 }
             } else System.out.println("Потому что боялись ");
         }
-        catch(Exception e){
-            System.err.println("Неправильный путь к файлу");
-        }
-    }
+
 
     private static class Paws {
 

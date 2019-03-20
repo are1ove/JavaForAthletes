@@ -81,15 +81,12 @@ public class Main {
                     break;
 
                 case "load":
-                    storyBeasts.becoming();
+                    storyBeasts.load();
                     break;
                 default:
                     printHelp();
             }
-
             storyBeasts.steps();
-
-
         }
 
     }
