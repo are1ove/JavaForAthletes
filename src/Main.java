@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * @author ilya
+ * @author ilya aka Chaps & Valeriy aka Stakan
  */
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
         storyGrandFather.interestingstory();
         storyWinnieAndPiglet.stopping();
         storyWinnieAndPiglet.going();
-        System.out.println("*Введите путь к json файлу*");
+        storyBeasts.load();
         storyBeasts.becoming();
         storyWinnieAndPiglet.wanting();
         storyGrandFather.settingposition();
@@ -86,7 +86,10 @@ public class Main {
                 default:
                     printHelp();
             }
+
             storyBeasts.steps();
+
+
         }
 
     }
