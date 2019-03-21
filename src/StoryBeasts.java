@@ -38,64 +38,66 @@ public class StoryBeasts {
      *
      * @since 1.0
      */
-    ArrayList<String> inpStrings = new ArrayList<>();
-    public void load() {
-        try {
-            System.out.println("*Введите путь к json файлу*");
-            Scanner scanner = new Scanner(System.in);
-
-            FileInputStream fis = new FileInputStream(new File(scanner.nextLine()));
-            InputStreamReader reader = new InputStreamReader(fis);
-
-
-            int data;
-            StringBuilder tempString = new StringBuilder();
-            while (true) {
-                data = reader.read();
-                if (data == -1) break;
-                char curChar = (char) data;
-                switch (curChar) {
-                    case '\n': {
-                        inpStrings.add(tempString.toString());
-                        tempString = new StringBuilder();
-                        break;
-                    }
-                    case '{':
-                        continue;
-                    case '}':
-                        continue;
-                    case ',':
-                        continue;
-                    default: {
-                        tempString.append(curChar);
-                        break;
+    public void load(){
+        int f = 0;
+        while (f == 0){
+            try{
+                System.out.println("*Введите путь к json файлу*");
+                Scanner scanner = new Scanner(System.in);
+                FileInputStream fis = new FileInputStream(new File(scanner.nextLine()));
+                InputStreamReader reader = new InputStreamReader(fis);
+                ArrayList<String> inpStrings = new ArrayList<>();
+                int data;
+                StringBuilder tempString = new StringBuilder();
+                while (true) {
+                    data = reader.read();
+                    if (data == -1) break;
+                    char curChar = (char) data;
+                    switch (curChar) {
+                        case '\n': {
+                            inpStrings.add(tempString.toString());
+                            tempString = new StringBuilder();
+                            break;
+                        }
+                        case '{':
+                            continue;
+                        case '}':
+                            continue;
+                        case ',':
+                            continue;
+                        default: {
+                            tempString.append(curChar);
+                            break;
+                        }
                     }
                 }
+                reader.close();
+                for (int i = 0; i < inpStrings.size(); i++) {
+                    if (inpStrings.get(i).contains("name")) {
+                        String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 2, inpStrings.get(i).length() - 1);
+                        inpStrings.set(i, str);
+                        if (str.contains("Страшный зверь")) {
+                            beasts.put("Зверь" + i, new ScaryBeast(str));
+                            countbeasts+=1;
+                            keys.add("Зверь" + i);
+                        } else {
+                            beasts.put("Зверь" + i, new UnknownBeast(str));
+                            countbeasts+=1;
+                            keys.add("Зверь" + i);
+                        }
+                    }
 
+                }
+                f = 1;
             }
-            reader.close();
-        } catch (Exception e) {
-            System.err.println("Неправильный путь к файлу");
+            catch(Exception e){
+                System.out.println("Неправильный путь к файлу");
+            }
         }
     }
+
     public void becoming() {
-            for (int i = 0; i < inpStrings.size(); i++) {
-                if (inpStrings.get(i).contains("name")) {
-                    String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 2, inpStrings.get(i).length() - 1);
-                    inpStrings.set(i, str);
-                    if (str.contains("Страшный зверь")) {
-                        beasts.put("Зверь" + i, new ScaryBeast(str));
-                        countbeasts+=1;
-                        keys.add("Зверь" + i);
-                    } else {
-                        beasts.put("Зверь" + i, new UnknownBeast(str));
-                        countbeasts+=1;
-                        keys.add("Зверь" + i);
-                    }
-                }
-
-            }
-
+        try {
             if (Math.random() > 0.1D) {
                 System.out.print("Потому что ");
                 for (int i = 0; i < beasts.size()/2; i++) {
@@ -107,7 +109,10 @@ public class StoryBeasts {
                 }
             } else System.out.println("Потому что боялись ");
         }
-
+        catch(Exception e){
+            System.err.println("Неправильный путь к файлу");
+        }
+    }
 
     private static class Paws {
 
@@ -146,9 +151,9 @@ public class StoryBeasts {
         try{
             Set set1 = beasts.entrySet();
             for (Object element : set1) {
-            Map.Entry mapEntry = (Map.Entry) element;
-            System.out.println(mapEntry);
-        }
+                Map.Entry mapEntry = (Map.Entry) element;
+                System.out.println(mapEntry);
+            }
         }
         catch(Exception e){
             System.err.println("Неправильный ввод");
@@ -162,24 +167,24 @@ public class StoryBeasts {
      */
     public void save() {
         try{
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
-            Set set = beasts.entrySet();
-            for (Object element : set) {
-                Map.Entry mapEntry = (Map.Entry) element;
-                final char dm = (char) 34;
-                String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                byte[] buffer = inptext.getBytes();
-                fos.write(buffer, 0, buffer.length);
+            try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/SomeBeasts.json")) {
+                Set set = beasts.entrySet();
+                for (Object element : set) {
+                    Map.Entry mapEntry = (Map.Entry) element;
+                    final char dm = (char) 34;
+                    String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                    byte[] buffer = inptext.getBytes();
+                    fos.write(buffer, 0, buffer.length);
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
             }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        }
+        catch(Exception e){
+            System.err.println("Неправильный ввод");
         }
     }
-        catch(Exception e){
-         System.err.println("Неправильный ввод");
-    }
-    }
-    
+
 
     /**
      * Метод info: вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
@@ -203,25 +208,25 @@ public class StoryBeasts {
     public void remove(String text) {
         try {
             if (beasts.containsKey(text)){
-            beasts.remove(text);
-            System.out.println("Элемент успешно удален");
-        }
-        else{
-           System.err.println("Неправильный ввод");
-        }
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
-            Set set = beasts.entrySet();
-            for (Object element : set) {
-                Map.Entry mapEntry = (Map.Entry) element;
-                final char dm = (char) 34;
-                String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                byte[] buffer = inptext.getBytes();
-                fos.write(buffer, 0, buffer.length);
+                beasts.remove(text);
+                System.out.println("Элемент успешно удален");
             }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            else{
+                System.err.println("Неправильный ввод");
+            }
+            try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
+                Set set = beasts.entrySet();
+                for (Object element : set) {
+                    Map.Entry mapEntry = (Map.Entry) element;
+                    final char dm = (char) 34;
+                    String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                    byte[] buffer = inptext.getBytes();
+                    fos.write(buffer, 0, buffer.length);
+                }
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
         }
-    }
         catch (Exception e){
             System.err.println("Неправильный ввод");
         }
@@ -237,10 +242,10 @@ public class StoryBeasts {
     public void remove_greater(String text) {
         try {
             int size = beasts.size();
-        for (int i = Integer.parseInt(text); i < size; i++) {
-            beasts.remove(keys.get(i));
-        System.out.println("Зверь успешно удален");
-        }
+            for (int i = Integer.parseInt(text); i < size; i++) {
+                beasts.remove(keys.get(i));
+                System.out.println("Зверь успешно удален");
+            }
         }
         catch(Exception e){
             System.err.println("Неправильный ввод");
@@ -256,22 +261,24 @@ public class StoryBeasts {
      */
     public void insert(String text) {
         String[] arraytext = text.split(" ");
-        try { 
+        try {
             if (arraytext[1].contains("Страшный")) {
-            beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-            keys.add(arraytext[0]);
-        } else if (arraytext[1].contains("Неизвестный")) {
-            beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-            keys.add(arraytext[0]);
-        } else {
-            System.err.println("Неправильный ввод");
-        }
-        System.out.println("Зверь успешно добавлен");
+                beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                keys.add(arraytext[0]);
+                System.out.println("Зверь успешно добавлен");
+            } else if (arraytext[1].contains("Неизвестный")) {
+                beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                keys.add(arraytext[0]);
+                System.out.println("Зверь успешно добавлен");
+            } else {
+                System.err.println("Неправильный ввод");
+            }
+
         }
         catch (Exception ex){
             System.err.println("Неправильный ввод");
         }
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
                 Map.Entry mapEntry = (Map.Entry) element;

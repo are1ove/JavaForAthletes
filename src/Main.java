@@ -12,7 +12,7 @@ public class Main {
      * @throws FearException
      * @throws IOException
      */
-    public static void main(String[] args) throws FearException, IOException {
+    public static void main(String[] args) {
 
         StoryWinnieAndPiglet storyWinnieAndPiglet = new StoryWinnieAndPiglet();
         StoryGrandFather storyGrandFather = new StoryGrandFather();
@@ -24,7 +24,7 @@ public class Main {
         storyGrandFather.interestingstory();
         storyWinnieAndPiglet.stopping();
         storyWinnieAndPiglet.going();
-        System.out.println("*Введите путь к json файлу*");
+        storyBeasts.load();
         storyBeasts.becoming();
         storyWinnieAndPiglet.wanting();
         storyGrandFather.settingposition();
@@ -86,7 +86,10 @@ public class Main {
                 default:
                     printHelp();
             }
+
             storyBeasts.steps();
+
+
         }
 
     }
@@ -106,5 +109,7 @@ public class Main {
         System.out.println("load - перечитать коллекцию из файла");
     }
 }
+
+
 
 
