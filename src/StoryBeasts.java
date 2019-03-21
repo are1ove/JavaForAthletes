@@ -162,7 +162,7 @@ public class StoryBeasts {
      */
     public void save() {
         try{
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/SomeBeasts.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
                 Map.Entry mapEntry = (Map.Entry) element;
@@ -209,7 +209,7 @@ public class StoryBeasts {
         else{
            System.err.println("Неправильный ввод");
         }
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
                 Map.Entry mapEntry = (Map.Entry) element;
@@ -271,7 +271,7 @@ public class StoryBeasts {
         catch (Exception ex){
             System.err.println("Неправильный ввод");
         }
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
             Set set = beasts.entrySet();
             for (Object element : set) {
                 Map.Entry mapEntry = (Map.Entry) element;
