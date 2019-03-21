@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * @author ilya
+ * @author ilya aka Chaps & Valeriy aka Stakan
  */
 public class Main {
 
