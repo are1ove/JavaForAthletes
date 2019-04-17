@@ -1,3 +1,5 @@
+package src;
+
 public class WinnieThePooh extends MainCharacter implements NameCharacter {
     public static String stop = "остановился";
     public static String think = "думал";

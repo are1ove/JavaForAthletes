@@ -1,3 +1,5 @@
+package src;
+
 public enum WishPiglet {
     DESIRE,
     RELUCTANCE;

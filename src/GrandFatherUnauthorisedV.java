@@ -1,3 +1,5 @@
+package src;
+
 public class GrandFatherUnauthorisedV implements NameCharacter, Position {
     public static String name;
     public static String there = "там";

@@ -1,3 +1,5 @@
+package src;
+
 public class DeseaseException extends RuntimeException {
     public DeseaseException() {
     }
