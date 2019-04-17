@@ -85,7 +85,7 @@ public class Main {
                     storyBeasts.load();
                     break;
                 default:
-                    printHelp();
+                    storyBeasts.printHelp();
             }
 
             storyBeasts.steps();
@@ -95,20 +95,6 @@ public class Main {
 
     }
 
-    /**
-     * Помощь в командах.
-     *
-     * @since 1.0
-     */
-    private static void printHelp() {
-        System.out.println("insert {String key} {element} - добавить новый элемент с заданным ключом");
-        System.out.println("remove_greater {element} - удалить из коллекции все элементы, превышающие заданный");
-        System.out.println("show - вывести в стандартный поток вывода все элементы коллекции в строковом представлении");
-        System.out.println("save - сохранить коллекцию в файл");
-        System.out.println("info - вывести в стандартный поток вывода информацию о коллекции");
-        System.out.println("remove {String key} - удалить элемент из коллекции по его ключу");
-        System.out.println("load - перечитать коллекцию из файла");
-    }
 }
 
 

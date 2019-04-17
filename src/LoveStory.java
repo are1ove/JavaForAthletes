@@ -1,8 +1,8 @@
 package src;
 
 public class LoveStory {
-    WinnieThePooh winnieThePooh = new WinnieThePooh("Винни Пух");
-    ChristopherRobin christopherRobin = new ChristopherRobin("Кристофер Робин");
+    public WinnieThePooh winnieThePooh = new WinnieThePooh("Винни Пух");
+    public ChristopherRobin christopherRobin = new ChristopherRobin("Кристофер Робин");
 
 
     public void loving() {
