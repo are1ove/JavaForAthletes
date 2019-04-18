@@ -1,3 +1,5 @@
+package src;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -67,7 +69,7 @@ public class Main {
                     break;
 
                 case "info":
-                    storyBeasts.info();
+                    System.out.println(storyBeasts.info());
                     break;
 
                 case "remove":
@@ -86,7 +88,7 @@ public class Main {
                     storyBeasts.printHelp();
             }
 
-            storyBeasts.steps();
+            System.out.println(storyBeasts.steps());
 
 
         }

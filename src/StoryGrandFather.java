@@ -1,3 +1,5 @@
+package src;
+
 public class StoryGrandFather {
 
     class Story1  {

@@ -1,3 +1,5 @@
+package src;
+
 public abstract class MainCharacter implements NameCharacter {
     private String name;
 

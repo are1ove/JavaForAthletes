@@ -1,3 +1,5 @@
+package src;
+
 
 public class FearException extends Exception {
     public FearException() {

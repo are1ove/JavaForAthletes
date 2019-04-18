@@ -1,3 +1,5 @@
+package src;
+
 public class LoveStory {
     public WinnieThePooh winnieThePooh = new WinnieThePooh("Винни Пух");
     public ChristopherRobin christopherRobin = new ChristopherRobin("Кристофер Робин");
