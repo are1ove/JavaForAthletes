@@ -1,4 +1,3 @@
-package src;
 
 public class Piglet extends MainCharacter implements NameCharacter {
     public static String was = "был";

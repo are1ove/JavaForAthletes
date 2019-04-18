@@ -1,5 +1,3 @@
-package src;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -181,7 +179,7 @@ public class StoryBeasts {
          System.err.println("Неправильный ввод");
     }
     }
-    
+
 
     /**
      * Метод info: вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)
@@ -258,7 +256,7 @@ public class StoryBeasts {
      */
     public void insert(String text) {
         String[] arraytext = text.split(" ");
-        try { 
+        try {
             if (arraytext[1].contains("Страшный")) {
             beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
             keys.add(arraytext[0]);

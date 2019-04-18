@@ -1,5 +1,3 @@
-package src;
-
 public class UnknownBeast extends Beasts {
 
     public UnknownBeast(String name){

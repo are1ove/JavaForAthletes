@@ -1,5 +1,3 @@
-package src;
-
 public class ScaryBeast extends Beasts{
     private Object varA;
     private Object varB;

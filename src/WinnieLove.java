@@ -1,10 +1,8 @@
-package src;
-
 public enum WinnieLove {
     LOVE,
     NOTLOVE;
 
-    void printLove() {
+    public void printLove() {
         switch (this) {
             case LOVE:
                 System.out.print("любит ");

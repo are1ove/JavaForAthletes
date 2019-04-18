@@ -1,5 +1,3 @@
-package src;
-
 public abstract class Beasts implements NameCharacter {
     private String name;
 

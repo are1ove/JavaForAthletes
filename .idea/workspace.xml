@@ -3,8 +3,47 @@
   <component name="ChangeListManager">
     <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/StoryBeasts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/DadsDisease$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/DadsDisease$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/DadsDisease.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/DadsDisease.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/DegreeOfExcitement$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/DegreeOfExcitement$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/DegreeOfExcitement.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/DegreeOfExcitement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/DeseaseException.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/DeseaseException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/EventSequence$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/EventSequence$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/EventSequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/EventSequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/FearException.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/FearException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/GrandFatherUnauthorisedV.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/GrandFatherUnauthorisedV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Meeting.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Meeting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Piglet.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Piglet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/WinnieLove.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/WinnieLove.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beasts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beasts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChristopherRobin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChristopherRobin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DadsDisease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DadsDisease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DegreeOfExcitement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DegreeOfExcitement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeseaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeseaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FearException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FearException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GrandFatherUnauthorisedV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GrandFatherUnauthorisedV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoveStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoveStory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Piglet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piglet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScaryBeast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScaryBeast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StatesWinnieThePooh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StatesWinnieThePooh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StoryBeasts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StoryBeasts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StoryGrandFather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StoryGrandFather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StoryWinnieAndPiglet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StoryWinnieAndPiglet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnknownBeast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnknownBeast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WinnieLove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WinnieLove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WinnieThePooh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WinnieThePooh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WishPiglet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WishPiglet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,73 +56,74 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-793">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backupfile.json">
+        <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="491">
+              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SomeBeasts.json">
+        <entry file="file://$PROJECT_DIR$/src/Beasts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state>
+              <caret column="40" selection-start-column="40" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/StoryBeasts.java">
+        <entry file="file://$PROJECT_DIR$/src/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="164" column="132" selection-start-line="164" selection-start-column="132" selection-end-line="164" selection-end-column="132" />
+            <state relative-caret-position="378">
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#326#327#0" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#491#492#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#588#589#0" expanded="true" />
-                <element signature="e#3706#3707#0" expanded="true" />
-                <element signature="e#3791#3792#0" expanded="true" />
-                <element signature="e#3821#3822#0" expanded="true" />
-                <element signature="e#3900#3901#0" expanded="true" />
-                <element signature="e#4052#4184#0" expanded="true" />
-                <element signature="e#4183#4184#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainCharacter.java">
+        <entry file="file://$PROJECT_DIR$/src/StoryGrandFather.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StoryWinnieAndPiglet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/StatesWinnieThePooh.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/UnknownBeast.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WinnieLove.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WinnieThePooh.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WishPiglet.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -95,24 +135,48 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/backupfile.json" />
-        <option value="$PROJECT_DIR$/src/SomeBeasts.json" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/StoryBeasts.java" />
+        <option value="$PROJECT_DIR$/src/ScaryBeast.java" />
+        <option value="$PROJECT_DIR$/src/UnknownBeast.java" />
+        <option value="$PROJECT_DIR$/src/Position.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/StoryWinnieAndPiglet.java" />
+        <option value="$PROJECT_DIR$/src/StoryGrandFather.java" />
+        <option value="$PROJECT_DIR$/src/ChristopherRobin.java" />
+        <option value="$PROJECT_DIR$/src/DadsDisease.java" />
+        <option value="$PROJECT_DIR$/src/DegreeOfExcitement.java" />
+        <option value="$PROJECT_DIR$/src/DeseaseException.java" />
+        <option value="$PROJECT_DIR$/src/Event.java" />
+        <option value="$PROJECT_DIR$/src/EventSequence.java" />
+        <option value="$PROJECT_DIR$/src/FearException.java" />
+        <option value="$PROJECT_DIR$/src/GrandFatherUnauthorisedV.java" />
+        <option value="$PROJECT_DIR$/src/LoveStory.java" />
+        <option value="$PROJECT_DIR$/src/MainCharacter.java" />
+        <option value="$PROJECT_DIR$/src/Meeting.java" />
+        <option value="$PROJECT_DIR$/src/NameCharacter.java" />
+        <option value="$PROJECT_DIR$/src/Piglet.java" />
+        <option value="$PROJECT_DIR$/src/StatesWinnieThePooh.java" />
+        <option value="$PROJECT_DIR$/src/WinnieLove.java" />
+        <option value="$PROJECT_DIR$/src/WinnieThePooh.java" />
+        <option value="$PROJECT_DIR$/src/WishPiglet.java" />
+        <option value="$PROJECT_DIR$/production/JavaForAthletes/SomeBeasts.json" />
+        <option value="$PROJECT_DIR$/src/SomeBeasts.json" />
+        <option value="$PROJECT_DIR$/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Beasts.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/server/Server.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="714" />
-    <option name="height" value="806" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,12 +187,19 @@
             <path>
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
@@ -138,12 +209,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553197287662" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555574133883" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -170,7 +243,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Client" />
+      <module name="JavaForAthletes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JavaForAthletes" />
@@ -178,6 +264,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="JavaForAthletes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -203,7 +302,12 @@
       <workItem from="1552641108189" duration="2287000" />
       <workItem from="1552834357590" duration="722000" />
       <workItem from="1553063772949" duration="5582000" />
-      <workItem from="1553155462720" duration="3446000" />
+      <workItem from="1553155462720" duration="3698000" />
+      <workItem from="1553288398052" duration="28000" />
+      <workItem from="1555484906016" duration="2000" />
+      <workItem from="1555484962348" duration="1344000" />
+      <workItem from="1555527451365" duration="1813000" />
+      <workItem from="1555571597189" duration="2242000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -345,17 +449,30 @@
       <option name="project" value="LOCAL" />
       <updated>1553196824454</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="FINAL CHANGES BEFORE DEFENDING">
+      <created>1553197131659</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1553197131659</updated>
+    </task>
+    <task id="LOCAL-00022" summary="FINAL CHANGES BEFORE DEFENDING 1.0">
+      <created>1553197376439</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1553197376439</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47550000" />
+    <option name="totallyTimeSpent" value="53231000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22889842" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24391988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -364,13 +481,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.08192771" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18192771" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32891566" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.055421688" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
@@ -422,6 +539,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First step to console application" />
     <MESSAGE value="First step2 to console application" />
@@ -439,7 +566,8 @@
     <MESSAGE value="Morning session" />
     <MESSAGE value="Load" />
     <MESSAGE value="FINAL CHANGES BEFORE DEFENDING" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINAL CHANGES BEFORE DEFENDING" />
+    <MESSAGE value="FINAL CHANGES BEFORE DEFENDING 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINAL CHANGES BEFORE DEFENDING 1.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Event.java" />
@@ -452,40 +580,6 @@
     <entry file="file://$PROJECT_DIR$/Main.java" />
     <entry file="file://$PROJECT_DIR$/Beasts.java" />
     <entry file="file://$PROJECT_DIR$/DegreeOfExcitement.java" />
-    <entry file="file://$PROJECT_DIR$/src/ChristopherRobin.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ScaryBeast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoveStory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GrandFatherUnauthorisedV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeseaseException.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beasts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk-11.0.1-2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -500,20 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StatesWinnieThePooh.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backupfile.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -521,27 +601,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SomeBeasts.json">
+    <entry file="file://$PROJECT_DIR$/src/ChristopherRobin.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DadsDisease.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DegreeOfExcitement.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeseaseException.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Event.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventSequence.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FearException.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GrandFatherUnauthorisedV.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoveStory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="105">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/MainCharacter.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Meeting.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NameCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-793">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Piglet.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Position.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ScaryBeast.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StatesWinnieThePooh.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StoryBeasts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="164" column="132" selection-start-line="164" selection-start-column="132" selection-end-line="164" selection-end-column="132" />
+        <state relative-caret-position="2460">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#326#327#0" expanded="true" />
@@ -556,6 +675,73 @@
             <element signature="e#3900#3901#0" expanded="true" />
             <element signature="e#4052#4184#0" expanded="true" />
             <element signature="e#4183#4184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/production/JavaForAthletes/SomeBeasts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SomeBeasts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StoryGrandFather.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StoryWinnieAndPiglet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UnknownBeast.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WinnieLove.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WinnieThePooh.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WishPiglet.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beasts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
