@@ -19,13 +19,14 @@ public class Main {
         StoryGrandFather storyGrandFather = new StoryGrandFather();
         LoveStory loveStory = new LoveStory();
         StoryBeasts storyBeasts = new StoryBeasts();
+        Func func = new Func();
 
 
         storyWinnieAndPiglet.telling();
         storyGrandFather.interestingstory();
         storyWinnieAndPiglet.stopping();
         storyWinnieAndPiglet.going();
-        storyBeasts.load();
+        func.load();
         storyBeasts.becoming();
         storyWinnieAndPiglet.wanting();
         storyGrandFather.settingposition();
@@ -47,7 +48,7 @@ public class Main {
                         System.err.println("Вы не ввели, кого вы хотите добавить в коллекцию");
                     } else {
                         text = line.substring(data[0].length() + 1);
-                        storyBeasts.insert(text);
+                        func.insert(text);
                     }
                     break;
 
@@ -56,20 +57,20 @@ public class Main {
                         System.err.println("Вы не ввели, с какого элемента вы хотите удалить элементы из коллекции");
                     } else {
                         text = line.substring(data[0].length() + 1);
-                        storyBeasts.remove_greater(text);
+                        func.remove_greater(text);
                     }
                     break;
 
                 case "show":
-                    storyBeasts.show();
+                    func.show();
                     break;
 
                 case "save":
-                    storyBeasts.save();
+                    func.save();
                     break;
 
                 case "info":
-                    System.out.println(storyBeasts.info());
+                    System.out.println(func.info());
                     break;
 
                 case "remove":
@@ -77,15 +78,15 @@ public class Main {
                         System.err.println("Вы не ввели, какой элемент вы хотите удалить");
                     } else {
                         text = line.substring(data[0].length() + 1);
-                        storyBeasts.remove(text);
+                        func.remove(text);
                     }
                     break;
 
                 case "load":
-                    storyBeasts.load();
+                    func.load();
                     break;
                 default:
-                    storyBeasts.printHelp();
+                    func.printHelp();
             }
 
             System.out.println(storyBeasts.steps());
