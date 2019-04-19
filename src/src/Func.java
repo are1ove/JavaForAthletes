@@ -1,12 +1,12 @@
 package src;
 
+import javax.print.DocFlavor;
 import java.io.*;
 import java.util.Map;
 import java.util.Set;
 
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
-
     /**
      * Помощь в командах.
      *
@@ -29,7 +29,7 @@ public class Func {
      *
      * @since 1.0
      */
-    public void load() {
+    public String load() {
         try {
             //System.out.println("*Введите путь к json файлу*");
             //Scanner scanner = new Scanner(System.in);
@@ -63,6 +63,7 @@ public class Func {
         } catch (Exception e) {
             System.err.println("Неправильный путь к файлу");
         }
+        return "Коллекция загрузилась";
     }
 
     /**
@@ -70,16 +71,17 @@ public class Func {
      *
      * @since 1.0
      */
-    public void show() {
+    public String show() {
         try {
             Set set1 = storyBeasts.beasts.entrySet();
             for (Object element : set1) {
                 Map.Entry mapEntry = (Map.Entry) element;
-                System.out.println(mapEntry);
+                return mapEntry.toString();
             }
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
+        return "Что то пошло не так";
     }
 
     /**
@@ -87,7 +89,7 @@ public class Func {
      *
      * @since 1.0
      */
-    public void save() {
+    public String save() {
         try {
             try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json")) {
                 Set set = storyBeasts.beasts.entrySet();
@@ -104,6 +106,7 @@ public class Func {
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
+        return "Засейвлено е";
     }
 
     /**

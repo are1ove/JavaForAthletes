@@ -3,6 +3,7 @@ package src;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class StoryBeasts {
     int countbeasts;
@@ -26,7 +27,7 @@ public class StoryBeasts {
     StoryTraces storyTraces = new StoryTraces();
 
 
-    LinkedHashMap<String, Beasts> beasts = new LinkedHashMap<>();
+    ConcurrentHashMap<String, Beasts> beasts = new ConcurrentHashMap<>();
     ArrayList<String> keys = new ArrayList<>();
     ArrayList<String> inpStrings = new ArrayList<>();
 
