@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
+
     /**
      * Помощь в командах.
      *
@@ -33,7 +34,7 @@ public class Func {
         try {
             //System.out.println("*Введите путь к json файлу*");
             //Scanner scanner = new Scanner(System.in);
-            FileInputStream fis = new FileInputStream(new File("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/ .json"));
+            FileInputStream fis = new FileInputStream(new File("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json"));
             InputStreamReader reader = new InputStreamReader(fis);
             int data;
             StringBuilder tempString = new StringBuilder();
@@ -139,18 +140,7 @@ public class Func {
             } else {
                 str = "*Неправильный ввод*";
             }
-            try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
-                Set set = storyBeasts.beasts.entrySet();
-                for (Object element : set) {
-                    Map.Entry mapEntry = (Map.Entry) element;
-                    final char dm = (char) 34;
-                    String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                    byte[] buffer = inptext.getBytes();
-                    fos.write(buffer, 0, buffer.length);
-                }
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
-            }
+            save();
         } catch (Exception e) {
             str = "*Неправильный ввод*";
         }
@@ -174,7 +164,7 @@ public class Func {
             }
             ret = "*Элементы успешно удалены*";
 
-            backup();
+            save();
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
@@ -203,25 +193,12 @@ public class Func {
             } else {
                 flag = "*Неправильный ввод*";
             }
-            backup();
+            save();
         } catch (Exception ex) {
             System.err.println("Неправильный ввод");
         }
         return flag;
     }
 
-    private void backup() throws IOException {
-        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
-            Set set = storyBeasts.beasts.entrySet();
-            for (Object element : set) {
-                Map.Entry mapEntry = (Map.Entry) element;
-                final char dm = (char) 34;
-                String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                byte[] buffer = inptext.getBytes();
-                fos.write(buffer, 0, buffer.length);
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+
 }

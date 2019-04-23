@@ -1,4 +1,4 @@
-package example1;
+package client_server;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -19,6 +19,10 @@ public class Command implements Serializable {
         switch (tokens[0]) {
             case "insert":
                 return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+            case "remove":
+                return new Command(tokens[0], Arrays.asList(tokens[1]));
+            case "remove_greater":
+                return new Command(tokens[0],Arrays.asList(tokens[1]));
             default:
                 return new Command(tokens[0], null);
         }

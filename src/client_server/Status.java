@@ -1,4 +1,4 @@
-package example1;
+package client_server;
 
 import java.io.Serializable;
 
