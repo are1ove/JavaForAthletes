@@ -1,8 +1,8 @@
 package src;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class StoryBeasts {
@@ -59,8 +59,31 @@ public class StoryBeasts {
             }
         } else System.out.println("Потому что боялись ");
     }
+  /*  public void createMap(String str){
 
-    private static class Paws {
+            JSONParser parser = new JSONParser();
+
+        try{
+
+            JSONArray a = (JSONArray) parser.parse(str);
+            for (Object o : a) {
+                JSONObject thing = (JSONObject) o;
+
+                String name = (String) thing.get("name");
+                if (name.startsWith("С"){
+                    beasts.put("Зверь" + i, new ScaryBeast(name));
+                }else {
+                    beasts.put("Зверь" + i, new UnknownBeast(name));
+                }
+            }
+        }catch (IOException){
+
+        }
+        }
+        */
+
+
+                private static class Paws {
 
         StoryBeasts storyBeasts = new StoryBeasts();
         public int countpaws = storyBeasts.keys.size();

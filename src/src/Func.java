@@ -61,6 +61,7 @@ public class Func {
                 }
             }
             reader.close();
+            storyBeasts.becoming();
         } catch (Exception e) {
             System.err.println("Неправильный путь к файлу");
         }
@@ -73,12 +74,14 @@ public class Func {
      * @since 1.0
      */
     public String show() {
+        String str = "";
         try {
             Set set1 = storyBeasts.beasts.entrySet();
             for (Object element : set1) {
                 Map.Entry mapEntry = (Map.Entry) element;
-                return mapEntry.toString();
+                str += '\n' + mapEntry.toString();
             }
+            return str;
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
@@ -107,6 +110,7 @@ public class Func {
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
+        backupsave();
         return "Коллекция сохранилась";
     }
 
@@ -140,7 +144,7 @@ public class Func {
             } else {
                 str = "*Неправильный ввод*";
             }
-            save();
+            backupsave();
         } catch (Exception e) {
             str = "*Неправильный ввод*";
         }
@@ -164,7 +168,7 @@ public class Func {
             }
             ret = "*Элементы успешно удалены*";
 
-            save();
+            backupsave();
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
@@ -193,11 +197,25 @@ public class Func {
             } else {
                 flag = "*Неправильный ввод*";
             }
-            save();
         } catch (Exception ex) {
             System.err.println("Неправильный ввод");
         }
+        backupsave();
         return flag;
+    }
+    public void backupsave(){
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
+            Set set = storyBeasts.beasts.entrySet();
+            for (Object element : set) {
+                Map.Entry mapEntry = (Map.Entry) element;
+                final char dm = (char) 34;
+                String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                byte[] buffer = inptext.getBytes();
+                fos.write(buffer, 0, buffer.length);
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
 

@@ -10,6 +10,7 @@ import java.net.SocketException;
 public class Client {
     public static void main(String... args) throws IOException, ClassNotFoundException {
         try {
+
             final Socket clientSocket = new Socket("localhost", 3248);
 
             ObjectOutputStream writer = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -47,7 +48,7 @@ public class Client {
                     }
                     line = consoleReader.readLine();
                     System.out.println("Next command: " + line);
-                } while (!line.equals("exit")&&clientSocket.isConnected());
+                } while (!line.equals("exit"));
 
                 System.out.println("Done");
 

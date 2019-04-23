@@ -40,11 +40,11 @@ public class Server implements Runnable {
                         case "insert":
                             List<String> args = (List<String>) cmd.data;
                             if (args.size() == 2) {
-                                status = new Status(0, theFunc.insert(args.get(0) + " " + args.get(1)));
-
+                                status = new Status(0, theFunc.insert(args.get(0)+' '+ args.get(1)));
+                                break;
                             } else {
                                 status = new Status(1, "Failure: command \"insert\" requires two arguments!\n");
-
+                                break;
                             }
                         case "load":
                             status = new Status(0, theFunc.load());
