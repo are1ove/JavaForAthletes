@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backupfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/backupfile.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client_server/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/CommandTraker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Func.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Func.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/SomeBeasts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/SomeBeasts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/StoryBeasts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/StoryBeasts.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client_server/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+            <state relative-caret-position="165">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/client_server/Command.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/Func.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="-1527">
               <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/src/SomeBeasts.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -106,16 +101,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/StoryBeasts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+            <state relative-caret-position="488">
+              <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2803#2804#0" expanded="true" />
-                <element signature="e#2876#2877#0" expanded="true" />
-                <element signature="e#2908#2909#0" expanded="true" />
-                <element signature="e#2974#2975#0" expanded="true" />
-                <element signature="e#3031#3176#0" expanded="true" />
-                <element signature="e#3175#3176#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#2801#2802#0" expanded="true" />
+                <element signature="e#2874#2875#0" expanded="true" />
+                <element signature="e#2906#2907#0" expanded="true" />
+                <element signature="e#2972#2973#0" expanded="true" />
+                <element signature="e#3029#3174#0" expanded="true" />
+                <element signature="e#3173#3174#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,9 +180,9 @@
         <option value="$PROJECT_DIR$/src/client_server/Command.java" />
         <option value="$PROJECT_DIR$/src/src/SomeBeasts.json" />
         <option value="$PROJECT_DIR$/backupfile.json" />
-        <option value="$PROJECT_DIR$/src/src/StoryBeasts.java" />
         <option value="$PROJECT_DIR$/src/client_server/Server.java" />
         <option value="$PROJECT_DIR$/src/src/Func.java" />
+        <option value="$PROJECT_DIR$/src/src/StoryBeasts.java" />
         <option value="$PROJECT_DIR$/src/client_server/Client.java" />
       </list>
     </option>
@@ -242,12 +239,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556054391632" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556190498481" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -270,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client (1)">
+  <component name="RunManager" selected="Application.Server (1)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client_server.Client" />
       <module name="JavaForAthletes" />
@@ -324,8 +321,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server (1)" />
+        <item itemvalue="Application.Client (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -359,7 +356,7 @@
       <workItem from="1555484962348" duration="1344000" />
       <workItem from="1555527451365" duration="1813000" />
       <workItem from="1555571597189" duration="39048000" />
-      <workItem from="1556002312901" duration="19339000" />
+      <workItem from="1556002312901" duration="21942000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -557,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556043893469</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Pre-final 3.0 version">
+      <created>1556054408050</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1556054408050</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109376000" />
+    <option name="totallyTimeSpent" value="111979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,8 +580,8 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7288961" visible="true" weight="0.18097281" />
-      <window_info id="Structure" order="1" sideWeight="0.2711039" side_tool="true" visible="true" weight="0.18097281" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.72762644" visible="true" weight="0.18097281" />
+      <window_info id="Structure" order="1" sideWeight="0.27237353" side_tool="true" visible="true" weight="0.18097281" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -585,7 +589,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50177306" side_tool="true" weight="0.24391988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.25783134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.38072288" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2626506" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -677,7 +681,24 @@
     <MESSAGE value="Client Server 2.0" />
     <MESSAGE value="Pre-final version" />
     <MESSAGE value="Pre-final 2.0 version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-final 2.0 version" />
+    <MESSAGE value="Pre-final 3.0 version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre-final 3.0 version" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="writer.writeObject(cmd)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>writer.writeObject(cmd)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/production/JavaForAthletes/SomeBeasts.json" />
@@ -982,22 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/StoryBeasts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2803#2804#0" expanded="true" />
-            <element signature="e#2876#2877#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-            <element signature="e#2974#2975#0" expanded="true" />
-            <element signature="e#3031#3176#0" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/Status.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1021,17 +1026,7 @@
     <entry file="file://$PROJECT_DIR$/src/client_server/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1041,7 +1036,7 @@
     <entry file="file://$PROJECT_DIR$/src/src/SomeBeasts.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1056,10 +1051,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1527">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/StoryBeasts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#2801#2802#0" expanded="true" />
+            <element signature="e#2874#2875#0" expanded="true" />
+            <element signature="e#2906#2907#0" expanded="true" />
+            <element signature="e#2972#2973#0" expanded="true" />
+            <element signature="e#3029#3174#0" expanded="true" />
+            <element signature="e#3173#3174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+        <state relative-caret-position="165">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1123,7 +1146,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
