@@ -23,6 +23,8 @@ public class Command implements Serializable {
                 return new Command(tokens[0], Arrays.asList(tokens[1]));
             case "remove_greater":
                 return new Command(tokens[0],Arrays.asList(tokens[1]));
+            case "import":
+                return new Command(tokens[0],Arrays.asList(tokens[1]));
             default:
                 return new Command(tokens[0], null);
         }

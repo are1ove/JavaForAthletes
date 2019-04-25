@@ -99,6 +99,10 @@ public class StoryBeasts {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String steps() {
         Paws paws = new Paws() {
             @Override

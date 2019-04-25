@@ -10,6 +10,7 @@ import java.util.List;
 public class Server implements Runnable {
     final Socket socket;
 
+    @Override
     public void run() {
         try {
 
@@ -46,9 +47,15 @@ public class Server implements Runnable {
                                 status = new Status(1, "Failure: command \"insert\" requires two arguments!\n");
                                 break;
                             }
-                        case "load":
-                            status = new Status(0, theFunc.load());
-                            break;
+                        case "import":
+                            List<String> argsss = (List<String>) cmd.data;
+                            if (argsss.size() == 1) {
+                                status = new Status(0, theFunc.importt(argsss.get(0)));
+                                break;
+                            } else {
+                                status = new Status(1, "Failure: command \"import\" requires one arguments!\n");
+                                break;
+                            }
                         case "info":
                             status = new Status(0, theFunc.info());
                             break;

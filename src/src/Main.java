@@ -1,5 +1,6 @@
 package src;
 
+import src.src.Func;
 import java.io.IOException;
 import java.util.*;
 

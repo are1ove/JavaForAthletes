@@ -2,8 +2,18 @@ package src;
 
 import javax.print.DocFlavor;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import src.ScaryBeast;
+import src.ScaryBeast;
+import src.StoryBeasts;
+import src.StoryBeasts;
+import src.UnknownBeast;
+import src.UnknownBeast;
 
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
@@ -28,13 +38,12 @@ public class Func {
      * Начало истории.
      * load: перечитать коллекцию из файла.
      *
+     * @return 
      * @since 1.0
      */
-    public String load() {
+    public String importt(String path) {
         try {
-            //System.out.println("*Введите путь к json файлу*");
-            //Scanner scanner = new Scanner(System.in);
-            FileInputStream fis = new FileInputStream(new File("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json"));
+            FileInputStream fis = new FileInputStream(new File(path));
             InputStreamReader reader = new InputStreamReader(fis);
             int data;
             StringBuilder tempString = new StringBuilder();
@@ -63,7 +72,7 @@ public class Func {
             reader.close();
             storyBeasts.becoming();
         } catch (Exception e) {
-            System.err.println("Неправильный путь к файлу");
+            return "Неправильный путь к файлу";
         }
         return "Коллекция загрузилась";
     }
@@ -71,17 +80,18 @@ public class Func {
     /**
      * show: вывести в стандартный поток вывода все элементы коллекции в строковом представлении.
      *
+     * @return 
      * @since 1.0
      */
-    public String show() {
+      public String show() {
         String str = "";
         try {
-            Set set1 = storyBeasts.beasts.entrySet();
-            for (Object element : set1) {
-                Map.Entry mapEntry = (Map.Entry) element;
-                str += '\n' + mapEntry.toString();
-            }
-            return str;
+            List list = new ArrayList(storyBeasts.beasts.entrySet());
+        Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
+        for (Object o: list){
+            str += "\n" + o ;
+        }
+        return str;    
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
@@ -91,13 +101,15 @@ public class Func {
     /**
      * Метод save сохраняет коллекцию в файл.
      *
+     * @return 
      * @since 1.0
      */
     public String save() {
         try {
-            try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json")) {
-                Set set = storyBeasts.beasts.entrySet();
-                for (Object element : set) {
+            try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
+                List list = new ArrayList(storyBeasts.beasts.entrySet());
+            Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
+                for (Object element : list) {
                     Map.Entry mapEntry = (Map.Entry) element;
                     final char dm = (char) 34;
                     String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
@@ -156,6 +168,8 @@ public class Func {
      * Пример: remove_greater 2
      * При вводе {String key} большего чем количество элементов, коллекция не изменится.
      *
+     * @param text
+     * @return 
      * @since 1.0
      */
 
@@ -180,6 +194,8 @@ public class Func {
      * Пример: insert Зверь1 Страшный зверь 1
      * При вводе {String key} {element} другого формата в консоль будет выведено сообщение "Неправильный ввод".
      *
+     * @param text
+     * @return 
      * @since 1.0
      */
     public String insert(String text) {
@@ -204,9 +220,10 @@ public class Func {
         return flag;
     }
     public void backupsave(){
-        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
-            Set set = storyBeasts.beasts.entrySet();
-            for (Object element : set) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
+            List list = new ArrayList(storyBeasts.beasts.entrySet());
+            Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
+            for (Object element : list) {
                 Map.Entry mapEntry = (Map.Entry) element;
                 final char dm = (char) 34;
                 String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
