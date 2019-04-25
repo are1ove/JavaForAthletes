@@ -32,7 +32,7 @@ public class StoryBeasts {
     ArrayList<String> keys = new ArrayList<>();
     ArrayList<String> inpStrings = new ArrayList<>();
 
-    public void becoming() {
+    public void beginning() {
         for (int i = 0; i < inpStrings.size(); i++) {
             if (inpStrings.get(i).contains("name")) {
                 String str = inpStrings.get(i).substring(inpStrings.get(i).indexOf(":") + 2, inpStrings.get(i).length() - 1);
@@ -49,6 +49,8 @@ public class StoryBeasts {
             }
 
         }
+    }
+    public void becoming(){
         if (Math.random() > 0.1D) {
             System.out.print("Потому что ");
             for (int i = 0; i < beasts.size() / 2; i++) {
@@ -61,15 +63,11 @@ public class StoryBeasts {
         } else System.out.println("Потому что боялись ");
     }
   /*  public void createMap(String str){
-
             JSONParser parser = new JSONParser();
-
         try{
-
             JSONArray a = (JSONArray) parser.parse(str);
             for (Object o : a) {
                 JSONObject thing = (JSONObject) o;
-
                 String name = (String) thing.get("name");
                 if (name.startsWith("С"){
                     beasts.put("Зверь" + i, new ScaryBeast(name));
@@ -78,13 +76,12 @@ public class StoryBeasts {
                 }
             }
         }catch (IOException){
-
         }
         }
 */
 
 
-                private static class Paws {
+    private static class Paws {
 
         StoryBeasts storyBeasts = new StoryBeasts();
         public int countpaws = storyBeasts.keys.size();

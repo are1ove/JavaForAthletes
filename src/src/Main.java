@@ -1,6 +1,5 @@
 package src;
 
-import src.src.Func;
 import java.io.IOException;
 import java.util.*;
 
@@ -20,14 +19,14 @@ public class Main {
         StoryGrandFather storyGrandFather = new StoryGrandFather();
         LoveStory loveStory = new LoveStory();
         StoryBeasts storyBeasts = new StoryBeasts();
-        Func func = new Func();
+       // Func func = new Func();
 
 
         storyWinnieAndPiglet.telling();
         storyGrandFather.interestingstory();
         storyWinnieAndPiglet.stopping();
         storyWinnieAndPiglet.going();
-        func.load();
+        // func.load();
         storyBeasts.becoming();
         storyWinnieAndPiglet.wanting();
         storyGrandFather.settingposition();
@@ -36,7 +35,7 @@ public class Main {
         meeting.startEvent();
         loveStory.loving();
         storyWinnieAndPiglet.suddenlystop();
-        Scanner scanner = new Scanner(System.in);
+      /*  Scanner scanner = new Scanner(System.in);
         System.out.println("*Введите команду*");
         while (true) {
             String line = scanner.nextLine();
@@ -84,20 +83,19 @@ public class Main {
                     break;
 
                 case "load":
-                    func.load();
+                  //  func.load();
                     break;
                 default:
                     func.printHelp();
             }
+*/
+        System.out.println(storyBeasts.steps());
 
-            System.out.println(storyBeasts.steps());
-
-
-        }
 
     }
 
 }
+
 
 
 
