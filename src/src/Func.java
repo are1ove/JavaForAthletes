@@ -109,7 +109,7 @@ public class Func {
      */
     public String save() {
         try {
-            try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json")) {
+            try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
                 List list = new ArrayList(storyBeasts.beasts.entrySet());
                 Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
                 for (Object element : list) {
@@ -228,7 +228,7 @@ public class Func {
         teller.main(args);
     }
     public void backupsave() {
-        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
             List list = new ArrayList(storyBeasts.beasts.entrySet());
             Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
             for (Object element : list) {
