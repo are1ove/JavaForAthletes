@@ -2,12 +2,9 @@ package src;
 
 import javax.print.DocFlavor;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
 
 import src.ScaryBeast;
 import src.ScaryBeast;
@@ -19,6 +16,62 @@ import src.UnknownBeast;
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
 
+
+    /**
+     * Вход пользователя.
+     *
+     * @return
+     * @since 2.0
+     */
+    public String login (String text) {
+        String[] arraytext = text.split(" ");
+        String flag = "*Вход прошел успешно*";
+        String Login = arraytext[0];
+        String Password = arraytext[1];
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        User user = new User();
+        user.setUsername(Login);
+        user.setPassword(Password);
+        ResultSet result = dataBaseHandler.getUser(user);
+
+        int counter = 0;
+
+
+        try {
+            while (result.next()) {
+                counter++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (counter >= 1) {
+            return flag;
+        }
+        else {
+            return "*Неправильный логин или пароль*";
+        }
+
+    }
+
+    /**
+     * Регистрация пользователя.
+     *
+     * @return
+     * @since 2.0
+     */
+    public String sign_up (String text) {
+        String[] arraytext = text.split(" ");
+        String flag = "*Вы успешно зарегистрировались! Пароль отправлен вам на почту*";
+        String Login = arraytext[0];
+        String Password = getSaltString();
+        String Email = arraytext[1];
+        User user = new User(Login, Password, Email);
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+
+        dataBaseHandler.signUpUser(user);
+        return flag;
+    }
+
     /**
      * Помощь в командах.
      *
@@ -26,7 +79,15 @@ public class Func {
      * @since 1.0
      */
     public String printHelp() {
-        return "insert {String key} {element} - добавить новый элемент с заданным ключом" + "\n"
+        return "*Команды, доступные без авторизации:*"  + "\n"
+                + "login {Username} {Passwrod} - войти в систему" + "\n"
+                + "sign_up {Username} {Email} - зарегистрироваться" + "\n"
+                + "bye - закончить работу с приложением" + "\n"
+                + "printHelp - помощь" + "\n"
+                + "команды и параметры необходимо разделять знаком ;" + "\n"
+                + "\n"
+                + "*Команды доступные с авторизацией:*" + "\n"
+                + "insert {String key} {element} - добавить новый элемент с заданным ключом" + "\n"
                 + "remove_greater {element} - удалить из коллекции все элементы, превышающие заданный" + "\n"
                 + "show - вывести в стандартный поток вывода все элементы коллекции в строковом представлении" + "\n"
                 + "save - сохранить коллекцию в файл" + "\n"
@@ -204,10 +265,13 @@ public class Func {
     public String insert(String text) {
         String[] arraytext = text.split(" ");
         String flag = "*Неправильный ввод*";
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        String Animal_name = arraytext[1] + " " + arraytext[2] + " " + arraytext[3];
         try {
             if (arraytext[1].contains("Страшный")) {
                 storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
                 storyBeasts.keys.add(arraytext[0]);
+                dataBaseHandler.signUpAnimal(arraytext[0], Animal_name);
                 flag = "*Зверь успешно добавлен*";
             } else if (arraytext[1].contains("Неизвестный")) {
                 storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
@@ -243,5 +307,17 @@ public class Func {
         }
     }
 
+    protected String getSaltString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 8) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
 
 }

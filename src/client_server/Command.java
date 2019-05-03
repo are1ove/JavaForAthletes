@@ -25,6 +25,10 @@ public class Command implements Serializable {
                 return new Command(tokens[0],Arrays.asList(tokens[1]));
             case "import":
                 return new Command(tokens[0],Arrays.asList(tokens[1]));
+            case "login":
+                return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+            case "sign_up":
+                return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
             default:
                 return new Command(tokens[0], null);
         }

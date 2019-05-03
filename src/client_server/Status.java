@@ -10,4 +10,8 @@ public class Status implements Serializable {
         message = msg;
         errorCode = code;
     }
+
+    public String getMessage() {
+        return message;
+    }
 }
