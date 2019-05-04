@@ -16,6 +16,7 @@ import src.UnknownBeast;
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
 
+    String enter_user;
 
     /**
      * Вход пользователя.
@@ -26,11 +27,11 @@ public class Func {
     public String login (String text) {
         String[] arraytext = text.split(" ");
         String flag = "*Вход прошел успешно*";
-        String Login = arraytext[0];
+        enter_user = arraytext[0];
         String Password = arraytext[1];
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         User user = new User();
-        user.setUsername(Login);
+        user.setUsername(enter_user);
         user.setPassword(Password);
         ResultSet result = dataBaseHandler.getUser(user);
 
@@ -52,6 +53,8 @@ public class Func {
         }
 
     }
+
+
 
     /**
      * Регистрация пользователя.
@@ -213,12 +216,30 @@ public class Func {
      */
     public String remove(String text) {
         String str = null;
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
         try {
-            if (storyBeasts.beasts.containsKey(text)) {
-                storyBeasts.beasts.remove(text);
-                str = "*Элемент успешно удален*";
-            } else {
-                str = "*Неправильный ввод*";
+            ResultSet result = dataBaseHandler.getremoveAnimal(text, enter_user);
+            int row_counter = 0;
+            try {
+                while (result.next()) {
+                    row_counter++;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            if (row_counter >= 1) {
+                if (storyBeasts.beasts.containsKey(text)) {
+                    storyBeasts.beasts.remove(text);
+                    dataBaseHandler.removeAnimal(text, enter_user);
+                    dataBaseHandler.signAss(text, enter_user, "remove");
+                    str = "*Элемент успешно удален*";
+                }
+                else{
+                    str = "*Неправильный ввод*";
+                }
+            }
+            else {
+                str = "*Вы не имеете доступ к удалению этого объекта из БД*";
             }
             backupsave();
         } catch (Exception e) {
@@ -268,17 +289,25 @@ public class Func {
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         String Animal_name = arraytext[1] + " " + arraytext[2] + " " + arraytext[3];
         try {
-            if (arraytext[1].contains("Страшный")) {
-                storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                storyBeasts.keys.add(arraytext[0]);
-                dataBaseHandler.signUpAnimal(arraytext[0], Animal_name);
-                flag = "*Зверь успешно добавлен*";
-            } else if (arraytext[1].contains("Неизвестный")) {
-                storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                storyBeasts.keys.add(arraytext[0]);
-                flag = "*Зверь успешно добавлен*";
-            } else {
-                flag = "*Неправильный ввод*";
+            if (!storyBeasts.beasts.containsKey(arraytext[0])) {
+                if (arraytext[1].contains("Страшный")) {
+                    storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                    storyBeasts.keys.add(arraytext[0]);
+                    dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
+                    dataBaseHandler.signAss(arraytext[0], enter_user, "insert");
+                    flag = "*Зверь успешно добавлен*";
+                } else if (arraytext[1].contains("Неизвестный")) {
+                    storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                    storyBeasts.keys.add(arraytext[0]);
+                    dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
+                    dataBaseHandler.signAss(arraytext[0], enter_user,"insert");
+                    flag = "*Зверь успешно добавлен*";
+                } else {
+                    flag = "*Неправильный ввод*";
+                }
+            }
+            else{
+                flag = "*Объект с таким ключом уже создан*";
             }
         } catch (Exception ex) {
             System.err.println("Неправильный ввод");

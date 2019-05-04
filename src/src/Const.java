@@ -11,4 +11,10 @@ public class Const {
     public static final String ANIMAL_TABLE = "objects";
     public static final String ANIMAL_KEY = "key";
     public static final String ANIMAL_NAME = "name";
+    public static final String ANIMAL_CREATOR = "creator";
+
+    public static final String ASS_TABLE = "association";
+    public static final String ASS_OBJECT_KEY = "object_key";
+    public static final String ASS_USER = "user_id";
+    public static final String ASS_ACTION = "action";
 }

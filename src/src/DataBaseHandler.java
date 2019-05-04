@@ -53,15 +53,38 @@ public class DataBaseHandler extends Configs {
         return resultSet;
     }
 
-    public void signUpAnimal(String key, String name){
+    public void signAss(String key, String user, String action){
+        String ass_insert = "INSERT INTO " + Const.ASS_TABLE + "(" +
+                Const.ASS_OBJECT_KEY + "," +
+                Const.ASS_USER + "," +
+                Const.ASS_ACTION + ")" +
+                "VALUES(?,?,?)";
+        System.out.println(ass_insert + ' ' + user);
+        try {
+            PreparedStatement prSt1 = getDbconnection().prepareStatement(ass_insert);
+            prSt1.setString(1, key);
+            prSt1.setString(2, user);
+            prSt1.setString(3, action);
+            prSt1.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void signUpAnimal(String key, String name, String user_login){
         String insert = "INSERT INTO " + Const.ANIMAL_TABLE + "(" +
                 Const.ANIMAL_KEY + "," +
-                Const.ANIMAL_NAME + ")" +
-                "VALUES(?,?)";
+                Const.ANIMAL_NAME + "," +
+                Const.ANIMAL_CREATOR + ")" +
+                "VALUES(?,?,?)";
+        System.out.println(insert + ' ' + user_login);
         try {
             PreparedStatement prSt = getDbconnection().prepareStatement(insert);
             prSt.setString(1, key);
             prSt.setString(2, name);
+            prSt.setString(3, user_login);
             prSt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,4 +92,41 @@ public class DataBaseHandler extends Configs {
             e.printStackTrace();
         }
     }
+
+    public ResultSet getremoveAnimal(String key, String user_login){
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM " + Const.ANIMAL_TABLE + " WHERE " +
+                Const.ANIMAL_KEY + "=? AND " + Const.ANIMAL_CREATOR + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(select);
+            prSt.setString(1, key);
+            prSt.setString(2, user_login);
+            resultSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resultSet;
+    }
+
+    public void removeAnimal(String key, String user_login){
+        String delete = "DELETE FROM " + Const.ANIMAL_TABLE  + " WHERE " +
+                Const.ANIMAL_KEY + "=? AND " +
+                Const.ANIMAL_CREATOR + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(delete);
+            prSt.setString(1, key);
+            prSt.setString(2, user_login);
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
