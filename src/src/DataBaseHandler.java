@@ -53,6 +53,24 @@ public class DataBaseHandler extends Configs {
         return resultSet;
     }
 
+    public ResultSet getAnimals (){
+        ResultSet resultSet = null;
+
+        String select = "SELECT " + Const.ANIMAL_KEY + "," +
+                Const.ANIMAL_NAME + "," + Const.ANIMAL_CREATOR +
+        " FROM " + Const.ANIMAL_TABLE;
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(select);
+            resultSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(resultSet);
+        return resultSet;
+    }
+
     public void signAss(String key, String user, String action){
         String ass_insert = "INSERT INTO " + Const.ASS_TABLE + "(" +
                 Const.ASS_OBJECT_KEY + "," +

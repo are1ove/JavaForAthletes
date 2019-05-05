@@ -152,13 +152,19 @@ public class Func {
      */
     public String show() {
         String str = "";
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        ResultSet resultSet = dataBaseHandler.getAnimals();
         try {
-            List list = new ArrayList(storyBeasts.beasts.entrySet());
-            Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
-            for (Object o : list) {
-                str += "\n" + o;
+            while (resultSet.next()) {
+                String key = resultSet.getString("key");
+                String name = resultSet.getString("name");
+                String creator = resultSet.getString("creator");
+
+                str += "\n key:" + key + "; " + "name:" + name + "; " + "creator:" + creator;
             }
             return str;
+        } catch (SQLException e) {
+            e.printStackTrace();
         } catch (Exception e) {
             System.err.println("Неправильный ввод");
         }
