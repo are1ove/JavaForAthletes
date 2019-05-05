@@ -295,7 +295,21 @@ public class Func {
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         String Animal_name = arraytext[1] + " " + arraytext[2] + " " + arraytext[3];
         try {
-            if (!storyBeasts.beasts.containsKey(arraytext[0])) {
+            ResultSet resultSet = dataBaseHandler.getremoveAnimal(arraytext[0], enter_user);
+            ResultSet resultSet1 = dataBaseHandler.getAnimalKey(arraytext[0]);
+            int row_counter = 0;
+            int row_counter_key = 0;
+            try {
+                while (resultSet.next()) {
+                    row_counter++;
+                }
+                while (resultSet1.next()) {
+                    row_counter_key++;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            if (row_counter == 0 & row_counter_key == 0) {
                 if (arraytext[1].contains("Страшный")) {
                     storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
                     storyBeasts.keys.add(arraytext[0]);
@@ -312,8 +326,25 @@ public class Func {
                     flag = "*Неправильный ввод*";
                 }
             }
+            else if (row_counter == 1 & row_counter_key == 1) {
+                if (arraytext[1].contains("Страшный")) {
+                    storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                    storyBeasts.keys.add(arraytext[0]);
+                    dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
+                    dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
+                    flag = "*Зверь успешно обновлен*";
+                } else if (arraytext[1].contains("Неизвестный")) {
+                    storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                    storyBeasts.keys.add(arraytext[0]);
+                    dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
+                    dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
+                    flag = "*Зверь успешно обновлен*";
+                } else {
+                    flag = "*Неправильный ввод*";
+                }
+            }
             else{
-                flag = "*Объект с таким ключом уже создан*";
+                flag = "*Этот объект создан другим пользователем, вы не имеете права его изменять*";
             }
         } catch (Exception ex) {
             System.err.println("Неправильный ввод");

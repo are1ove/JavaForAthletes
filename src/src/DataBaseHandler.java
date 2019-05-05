@@ -77,7 +77,6 @@ public class DataBaseHandler extends Configs {
                 Const.ASS_USER + "," +
                 Const.ASS_ACTION + ")" +
                 "VALUES(?,?,?)";
-        System.out.println(ass_insert + ' ' + user);
         try {
             PreparedStatement prSt1 = getDbconnection().prepareStatement(ass_insert);
             prSt1.setString(1, key);
@@ -97,12 +96,27 @@ public class DataBaseHandler extends Configs {
                 Const.ANIMAL_NAME + "," +
                 Const.ANIMAL_CREATOR + ")" +
                 "VALUES(?,?,?)";
-        System.out.println(insert + ' ' + user_login);
         try {
             PreparedStatement prSt = getDbconnection().prepareStatement(insert);
             prSt.setString(1, key);
             prSt.setString(2, name);
             prSt.setString(3, user_login);
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void renameAnimal(String key, String name){
+        String update = "UPDATE " + Const.ANIMAL_TABLE + " SET " +
+                Const.ANIMAL_NAME + "=?" + " WHERE " +
+                Const.ANIMAL_KEY + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(update);
+            prSt.setString(1, name);
+            prSt.setString(2, key);
             prSt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -120,6 +134,24 @@ public class DataBaseHandler extends Configs {
             PreparedStatement prSt = getDbconnection().prepareStatement(select);
             prSt.setString(1, key);
             prSt.setString(2, user_login);
+            resultSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resultSet;
+    }
+
+    public ResultSet getAnimalKey(String key){
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM " + Const.ANIMAL_TABLE + " WHERE " +
+                Const.ANIMAL_KEY + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(select);
+            prSt.setString(1, key);
             resultSet = prSt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
