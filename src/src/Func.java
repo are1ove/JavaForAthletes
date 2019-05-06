@@ -1,17 +1,19 @@
 package src;
 
-import javax.print.DocFlavor;
+import client_server.Client;
+import client_server.Server;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-
-import src.ScaryBeast;
-import src.ScaryBeast;
-import src.StoryBeasts;
-import src.StoryBeasts;
-import src.UnknownBeast;
-import src.UnknownBeast;
+import java.util.Properties;
 
 public class Func {
     StoryBeasts storyBeasts = new StoryBeasts();
@@ -62,12 +64,26 @@ public class Func {
      * @return
      * @since 2.0
      */
-    public String sign_up (String text) {
+    public String sign_up (String text) throws IOException, MessagingException {
         String[] arraytext = text.split(" ");
         String flag = "*Вы успешно зарегистрировались! Пароль отправлен вам на почту*";
         String Login = arraytext[0];
         String Password = getSaltString();
         String Email = arraytext[1];
+        final Properties properties = new Properties();
+        properties.load(new FileInputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/mail.properties"));
+        Session mailSession = Session.getDefaultInstance(properties);
+        MimeMessage message = new MimeMessage(mailSession);
+        message.setFrom(new InternetAddress("stakanofff.valerij@gmail.com"));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+        message.setSubject("Your new password");
+        message.setText(Password);
+
+        Transport transport = mailSession.getTransport();
+        transport.connect("stakanofff.valerij@gmail.com","Caretta_Caretta1");
+        transport.sendMessage(message,message.getAllRecipients());
+        transport.close();
+
         User user = new User(Login, Password, Email);
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
 
