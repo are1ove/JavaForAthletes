@@ -1,5 +1,9 @@
 package src;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+
 public class User {
     private String username;
     private String password;
@@ -23,8 +27,15 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassword() throws NoSuchAlgorithmException {
+        MessageDigest sha224 = MessageDigest.getInstance("SHA-224");
+        byte[] bytes = sha224.digest(password.getBytes());
+        StringBuilder builder = new StringBuilder();
+        for (byte b : bytes){
+            builder.append(String.format("%02X ", b));
+        }
+        System.out.println(builder.toString());
+        return builder.toString();
     }
 
     public void setPassword(String password) {
