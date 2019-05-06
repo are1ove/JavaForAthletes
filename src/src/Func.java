@@ -80,7 +80,7 @@ public class Func {
         message.setText(Password);
 
         Transport transport = mailSession.getTransport();
-        transport.connect("stakanofff.valerij@gmail.com","Caretta_Caretta1");
+        transport.connect("stakanofff.valerij@gmail.com","heh");
         transport.sendMessage(message,message.getAllRecipients());
         transport.close();
 
