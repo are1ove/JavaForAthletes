@@ -2,6 +2,7 @@ package client_server;
 
 import src.Func;
 
+import javax.mail.MessagingException;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -151,6 +152,8 @@ public class Server implements Runnable {
                 } catch (EOFException e) {
                     keepDoing = false;
                     System.out.println("Client disconnected");
+                } catch (MessagingException e) {
+                    e.printStackTrace();
                 }
             }
 

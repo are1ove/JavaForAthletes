@@ -70,24 +70,49 @@ public class Func {
         String Login = arraytext[0];
         String Password = getSaltString();
         String Email = arraytext[1];
-        final Properties properties = new Properties();
-        properties.load(new FileInputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/mail.properties"));
-        Session mailSession = Session.getDefaultInstance(properties);
-        MimeMessage message = new MimeMessage(mailSession);
-        message.setFrom(new InternetAddress("stakanofff.valerij@gmail.com"));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(Email));
-        message.setSubject("Your new password");
-        message.setText(Password);
-
-        Transport transport = mailSession.getTransport();
-        transport.connect("stakanofff.valerij@gmail.com","heh");
-        transport.sendMessage(message,message.getAllRecipients());
-        transport.close();
-
-        User user = new User(Login, Password, Email);
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        ResultSet resultname = dataBaseHandler.isUsername(Login);
+        ResultSet resultemail = dataBaseHandler.isUserEmail(Email);
+        int countername = 0;
+        int counteremail = 0;
+        try {
+            while (resultname.next()) {
+                countername++;
+            }
+            while (resultemail.next()) {
+                counteremail++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (countername == 0 & counteremail == 0) {
+            final Properties properties = new Properties();
+            properties.load(new FileInputStream("/Users/ilya/Documents/Учеба/Программирование/lab5/JavaForAthletes/mail.properties"));
+            Session mailSession = Session.getDefaultInstance(properties);
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setFrom(new InternetAddress("ilonach003@gmail.com"));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+            message.setSubject("Your new password");
+            message.setText(Password);
 
-        dataBaseHandler.signUpUser(user);
+            Transport transport = mailSession.getTransport();
+            transport.connect("ilonach003@gmail.com","03012003ch");
+            try {
+                transport.sendMessage(message,message.getAllRecipients());
+                transport.close();
+                User user = new User(Login, Password, Email);
+                dataBaseHandler.signUpUser(user);
+            } catch (MessagingException e) {
+                flag = "*Неправильный формат почты*";
+            }
+        }
+        else if (countername == 1 & counteremail == 0){
+            flag = "*Пользователь с таким именем уже существует*";
+        }
+        else if ((countername == 1 || countername == 0) & counteremail == 1){
+            flag = "*Вы уже зарегистрированы, проверьте свою почту, письмо с паролем могло попасть в спам*";
+        }
+
         return flag;
     }
 
@@ -284,6 +309,10 @@ public class Func {
         String ret = null;
         try {
             int size = storyBeasts.beasts.size();
+            int count = Integer.parseInt(text);
+            DataBaseHandler dataBaseHandler = new DataBaseHandler();
+            dataBaseHandler.remove_greater(count, enter_user);
+            dataBaseHandler.signAss("-", enter_user, "remove_greater " + text);
             for (int i = Integer.parseInt(text); i < size; i++) {
                 storyBeasts.beasts.remove(storyBeasts.keys.get(i));
             }

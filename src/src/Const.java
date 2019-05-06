@@ -9,6 +9,7 @@ public class Const {
     public static final String USERS_Email = "email";
 
     public static final String ANIMAL_TABLE = "objects";
+    public static final String ANIMAL_ID = "id_objects";
     public static final String ANIMAL_KEY = "key";
     public static final String ANIMAL_NAME = "name";
     public static final String ANIMAL_CREATOR = "creator";

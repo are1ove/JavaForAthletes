@@ -1,5 +1,6 @@
 package src;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,6 +32,8 @@ public class DataBaseHandler extends Configs {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
     }
 
@@ -48,8 +51,44 @@ public class DataBaseHandler extends Configs {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
 
+        return resultSet;
+    }
+
+    public ResultSet isUsername (String user_name){
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
+                Const.USERS_USERNAME + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(select);
+            prSt.setString(1, user_name);
+            resultSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public ResultSet isUserEmail(String email){
+        ResultSet resultSet = null;
+
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
+                Const.USERS_Email + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(select);
+            prSt.setString(1, email);
+            resultSet = prSt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         return resultSet;
     }
 
@@ -58,7 +97,7 @@ public class DataBaseHandler extends Configs {
 
         String select = "SELECT " + Const.ANIMAL_KEY + "," +
                 Const.ANIMAL_NAME + "," + Const.ANIMAL_CREATOR +
-        " FROM " + Const.ANIMAL_TABLE;
+                " FROM " + Const.ANIMAL_TABLE;
         try {
             PreparedStatement prSt = getDbconnection().prepareStatement(select);
             resultSet = prSt.executeQuery();
@@ -178,5 +217,21 @@ public class DataBaseHandler extends Configs {
         }
     }
 
+    public void remove_greater (int count, String user_login){
+
+        String delete_greater = "DELETE FROM " + Const.ANIMAL_TABLE  + " WHERE " +
+                Const.ANIMAL_ID + ">? AND " +
+                Const.ANIMAL_CREATOR + "=?";
+        try {
+            PreparedStatement prSt = getDbconnection().prepareStatement(delete_greater);
+            prSt.setInt(1, count);
+            prSt.setString(2, user_login);
+            prSt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
