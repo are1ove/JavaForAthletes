@@ -32,7 +32,7 @@ public class User {
         byte[] bytes = sha224.digest(password.getBytes());
         StringBuilder builder = new StringBuilder();
         for (byte b : bytes){
-            builder.append(String.format("%02X ", b));
+            builder.append(String.format("%02X", b));
         }
         System.out.println(builder.toString());
         return builder.toString();
