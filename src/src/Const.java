@@ -16,6 +16,6 @@ public class Const {
 
     public static final String ASS_TABLE = "association";
     public static final String ASS_OBJECT_KEY = "object_key";
-    public static final String ASS_USER = "user_id";
+    public static final String ASS_USERNAME = "user_name";
     public static final String ASS_ACTION = "action";
 }

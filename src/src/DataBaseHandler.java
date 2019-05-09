@@ -106,14 +106,13 @@ public class DataBaseHandler extends Configs {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(resultSet);
         return resultSet;
     }
 
     public void signAss(String key, String user, String action){
         String ass_insert = "INSERT INTO " + Const.ASS_TABLE + "(" +
                 Const.ASS_OBJECT_KEY + "," +
-                Const.ASS_USER + "," +
+                Const.ASS_USERNAME + "," +
                 Const.ASS_ACTION + ")" +
                 "VALUES(?,?,?)";
         try {

@@ -132,13 +132,13 @@ public class Func {
                 + "\n"
                 + "*Команды доступные с авторизацией:*" + "\n"
                 + "insert {String key} {element} - добавить новый элемент с заданным ключом" + "\n"
-                + "remove_greater {element} - удалить из коллекции все элементы, превышающие заданный" + "\n"
+                //+ "remove_greater {element} - удалить из коллекции все элементы, превышающие заданный" + "\n"
                 + "show - вывести в стандартный поток вывода все элементы коллекции в строковом представлении" + "\n"
                 + "save - сохранить коллекцию в файл" + "\n"
                 + "info - вывести в стандартный поток вывода информацию о коллекции" + "\n"
                 + "remove {String key} - удалить элемент из коллекции по его ключу" + "\n"
-                + "import - перечитать коллекцию из файла с заданным путем" + "\n"
-                + "story - показать историю зверей" + "\n"
+                //+ "import - перечитать коллекцию из файла с заданным путем" + "\n"
+                //+ "story - показать историю зверей" + "\n"
                 + "команды и параметры необходимо разделять знаком ;" + "\n";
     }
 
@@ -207,7 +207,7 @@ public class Func {
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
-            System.err.println("Неправильный ввод");
+            return "Что то пошло не так";
         }
         return "Что то пошло не так";
     }
@@ -219,22 +219,27 @@ public class Func {
      * @since 1.0
      */
     public String save() {
-        try {
-            try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
-                List list = new ArrayList(storyBeasts.beasts.entrySet());
-                Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
-                for (Object element : list) {
-                    Map.Entry mapEntry = (Map.Entry) element;
+        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
+            DataBaseHandler dataBaseHandler = new DataBaseHandler();
+            ResultSet resultSet = dataBaseHandler.getAnimals();
+            try {
+                while (resultSet.next()) {
+                    String key = resultSet.getString("key");
+                    String name = resultSet.getString("name");
+                    String creator = resultSet.getString("creator");
                     final char dm = (char) 34;
-                    String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
+                    String inptext = "{" + dm + "key" + dm + ":" + dm + key + dm + ","
+                            + dm + "name" + dm + ":" + dm + name + dm + "," + dm + "creator" + dm + ":" + dm + creator + dm + "},\n";
                     byte[] buffer = inptext.getBytes();
                     fos.write(buffer, 0, buffer.length);
                 }
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            System.err.println("Неправильный ввод");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         backupsave();
         return "Коллекция сохранилась";
@@ -247,8 +252,18 @@ public class Func {
      * @since 1.0
      */
     public String info() {
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        ResultSet resultSet = dataBaseHandler.getAnimals();
+        int counter = 0;
+        try {
+            while (resultSet.next()) {
+                counter+=1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return "Тип коллекции: " + storyBeasts.beasts.getClass() + "\n" +
-                "Количество элементов в коллекци: " + storyBeasts.beasts.size() + "\n" +
+                "Количество элементов в коллекци: " + counter + "\n" +
                 "Дата создания: " + storyBeasts.CREATE_DATE + "\n";
     }
 
@@ -338,62 +353,69 @@ public class Func {
         String[] arraytext = text.split(" ");
         String flag = "*Неправильный ввод*";
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
-        String Animal_name = arraytext[1] + " " + arraytext[2] + " " + arraytext[3];
-        try {
-            ResultSet resultSet = dataBaseHandler.getremoveAnimal(arraytext[0], enter_user);
-            ResultSet resultSet1 = dataBaseHandler.getAnimalKey(arraytext[0]);
-            int row_counter = 0;
-            int row_counter_key = 0;
+        if (arraytext.length == 4){
+            String Animal_name = arraytext[1] + " " + arraytext[2] + " " + arraytext[3];
             try {
-                while (resultSet.next()) {
-                    row_counter++;
+                ResultSet resultSet = dataBaseHandler.getremoveAnimal(arraytext[0], enter_user);
+                ResultSet resultSet1 = dataBaseHandler.getAnimalKey(arraytext[0]);
+                int row_counter = 0;
+                int row_counter_key = 0;
+                try {
+                    while (resultSet.next()) {
+                        row_counter++;
+                    }
+                    while (resultSet1.next()) {
+                        row_counter_key++;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-                while (resultSet1.next()) {
-                    row_counter_key++;
+                if (row_counter == 0 & row_counter_key == 0) {
+                    if (arraytext[1].contains("Страшный")) {
+                        storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                        dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
+                        dataBaseHandler.signAss(arraytext[0], enter_user, "insert");
+                        flag = "*Зверь успешно добавлен*";
+                    } else if (arraytext[1].contains("Неизвестный")) {
+                        storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                        dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
+                        dataBaseHandler.signAss(arraytext[0], enter_user,"insert");
+                        flag = "*Зверь успешно добавлен*";
+                    } else {
+                        flag = "*Неправильный ввод*";
+                    }
                 }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            if (row_counter == 0 & row_counter_key == 0) {
-                if (arraytext[1].contains("Страшный")) {
-                    storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                    storyBeasts.keys.add(arraytext[0]);
-                    dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
-                    dataBaseHandler.signAss(arraytext[0], enter_user, "insert");
-                    flag = "*Зверь успешно добавлен*";
-                } else if (arraytext[1].contains("Неизвестный")) {
-                    storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                    storyBeasts.keys.add(arraytext[0]);
-                    dataBaseHandler.signUpAnimal(arraytext[0], Animal_name, enter_user);
-                    dataBaseHandler.signAss(arraytext[0], enter_user,"insert");
-                    flag = "*Зверь успешно добавлен*";
-                } else {
-                    flag = "*Неправильный ввод*";
+                else if (row_counter == 1 & row_counter_key == 1) {
+                    if (arraytext[1].contains("Страшный")) {
+                        storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                        dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
+                        dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
+                        flag = "*Зверь успешно обновлен*";
+                    } else if (arraytext[1].contains("Неизвестный")) {
+                        storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
+                        storyBeasts.keys.add(arraytext[0]);
+                        dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
+                        dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
+                        flag = "*Зверь успешно обновлен*";
+                    } else {
+                        flag = "*Неправильный ввод*";
+                    }
                 }
-            }
-            else if (row_counter == 1 & row_counter_key == 1) {
-                if (arraytext[1].contains("Страшный")) {
-                    storyBeasts.beasts.put(arraytext[0], new ScaryBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                    storyBeasts.keys.add(arraytext[0]);
-                    dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
-                    dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
-                    flag = "*Зверь успешно обновлен*";
-                } else if (arraytext[1].contains("Неизвестный")) {
-                    storyBeasts.beasts.put(arraytext[0], new UnknownBeast(arraytext[1] + " " + arraytext[2] + " " + arraytext[3]));
-                    storyBeasts.keys.add(arraytext[0]);
-                    dataBaseHandler.renameAnimal(arraytext[0], Animal_name);
-                    dataBaseHandler.signAss(arraytext[0], enter_user, "rename");
-                    flag = "*Зверь успешно обновлен*";
-                } else {
-                    flag = "*Неправильный ввод*";
+                else{
+                    flag = "*Этот объект создан другим пользователем, вы не имеете права его изменять*";
                 }
+            } catch (Exception ex) {
+                System.err.println("Неправильный ввод");
             }
-            else{
-                flag = "*Этот объект создан другим пользователем, вы не имеете права его изменять*";
-            }
-        } catch (Exception ex) {
-            System.err.println("Неправильный ввод");
         }
+        else{
+            flag = "*Неправильный ввод*";
+
+        }
+
         backupsave();
         return flag;
     }
@@ -404,17 +426,26 @@ public class Func {
     }
     public void backupsave() {
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
-            List list = new ArrayList(storyBeasts.beasts.entrySet());
-            Collections.sort(list, (Map.Entry<String, Beasts> a, Map.Entry<String, Beasts> b) -> a.getValue().getIntName() - b.getValue().getIntName());
-            for (Object element : list) {
-                Map.Entry mapEntry = (Map.Entry) element;
-                final char dm = (char) 34;
-                String inptext = "{" + dm + "name" + dm + ":" + dm + mapEntry.getValue() + dm + "},\n";
-                byte[] buffer = inptext.getBytes();
-                fos.write(buffer, 0, buffer.length);
+            DataBaseHandler dataBaseHandler = new DataBaseHandler();
+            ResultSet resultSet = dataBaseHandler.getAnimals();
+            try {
+                while (resultSet.next()) {
+                    String key = resultSet.getString("key");
+                    String name = resultSet.getString("name");
+                    String creator = resultSet.getString("creator");
+                    final char dm = (char) 34;
+                    String inptext = "{" + dm + "key" + dm + ":" + dm + key + dm + ","
+                            + dm + "name" + dm + ":" + dm + name + dm + "," + dm + "creator" + dm + ":" + dm + creator + dm + "},\n";
+                    byte[] buffer = inptext.getBytes();
+                    fos.write(buffer, 0, buffer.length);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

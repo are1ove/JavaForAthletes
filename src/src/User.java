@@ -34,7 +34,6 @@ public class User {
         for (byte b : bytes){
             builder.append(String.format("%02X", b));
         }
-        System.out.println(builder.toString());
         return builder.toString();
     }
 
