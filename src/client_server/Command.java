@@ -13,24 +13,55 @@ public class Command implements Serializable {
         data = d;
     }
 
-    public static Command getCommand(String line) {
+        public static Command getCommand(String line) {
         String[] tokens = line.split(";");
 
         switch (tokens[0]) {
             case "insert":
-                return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                if (tokens.length == 3) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате кого вы хотите добавить");
+                }
+                break;
             case "remove":
-                return new Command(tokens[0], Arrays.asList(tokens[1]));
+                if (tokens.length == 2) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате какой элемент вы хотите удалить");
+                }
+                break;
             case "remove_greater":
-                return new Command(tokens[0],Arrays.asList(tokens[1]));
+                if (tokens.length == 2) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате какие элементы вы хотите удалить");
+                }
+                break;
             case "import":
-                return new Command(tokens[0],Arrays.asList(tokens[1]));
+                if (tokens.length == 2) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате путь к файлу который вы хотите загрузить");
+                }
+                break;
             case "login":
-                return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                if (tokens.length == 3) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате логин и пароль");
+                }
+                break;
             case "sign_up":
-                return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                if (tokens.length == 3) {
+                    return new Command(tokens[0], Arrays.asList(tokens[1], tokens[2]));
+                } else {
+                    System.out.println("Неправильный формат\nВведите в правильном формате логин и почту");
+                }
+                break;
             default:
                 return new Command(tokens[0], null);
         }
+        return new Command(tokens[0], Arrays.asList(tokens[0]));
     }
 }
