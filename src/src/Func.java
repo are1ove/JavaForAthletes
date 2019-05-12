@@ -1,8 +1,5 @@
 package src;
 
-import client_server.Client;
-import client_server.Server;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -419,11 +416,7 @@ public class Func {
         backupsave();
         return flag;
     }
-    public void story(){
-        Main teller = new Main();
-        String [] args = new String[]{"str"};
-        teller.main(args);
-    }
+
     public void backupsave() {
         try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
             DataBaseHandler dataBaseHandler = new DataBaseHandler();
