@@ -152,8 +152,6 @@ public class Server implements Runnable {
                 } catch (EOFException e) {
                     keepDoing = false;
                     System.out.println("Client disconnected");
-                } catch (MessagingException e) {
-                    e.printStackTrace();
                 }
             }
 

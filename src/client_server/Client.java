@@ -15,10 +15,6 @@ public class Client {
 
                 ObjectOutputStream writer = new ObjectOutputStream(clientSocket.getOutputStream());
                 ObjectInputStream inFromServer = new ObjectInputStream(clientSocket.getInputStream());
-                System.out.println("Войдите или зарегестрируйтесь. (Все команды будут доступны после входа в систему)"+ "\n" +
-                       "Для входа введите команду login;ваш_логин;ваш_пароль" + "\n"
-                        + "Для регистрации (пароль будет отправлен вам на почту) введите команду sign_up;желаемый_логин;ваш_Email"+ "\n" );
-
                 try  {
                     BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
                     String line = consoleReader.readLine();

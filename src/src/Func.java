@@ -1,9 +1,6 @@
 package src;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.*;
@@ -61,7 +58,7 @@ public class Func {
      * @return
      * @since 2.0
      */
-    public String sign_up (String text) throws IOException, MessagingException {
+    public String sign_up (String text) {
         String[] arraytext = text.split(" ");
         String flag = "*Вы успешно зарегистрировались! Пароль отправлен вам на почту*";
         String Login = arraytext[0];
@@ -84,16 +81,45 @@ public class Func {
         }
         if (countername == 0 & counteremail == 0) {
             final Properties properties = new Properties();
-            properties.load(new FileInputStream("/Users/ilya/Documents/Учеба/Программирование/lab5/JavaForAthletes/mail.properties"));
+            try {
+                properties.load(new FileInputStream("/Users/ilya/Documents/Учеба/Программирование/lab5/JavaForAthletes/mail.properties"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Session mailSession = Session.getDefaultInstance(properties);
             MimeMessage message = new MimeMessage(mailSession);
-            message.setFrom(new InternetAddress("ilonach003@gmail.com"));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(Email));
-            message.setSubject("Your new password");
-            message.setText(Password);
+            try {
+                message.setFrom(new InternetAddress("ilonach003@gmail.com"));
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            try {
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(Email));
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            try {
+                message.setSubject("Your new password");
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            try {
+                message.setText(Password);
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
 
-            Transport transport = mailSession.getTransport();
-            transport.connect("ilonach003@gmail.com","03012003ch");
+            Transport transport = null;
+            try {
+                transport = mailSession.getTransport();
+            } catch (NoSuchProviderException e) {
+                e.printStackTrace();
+            }
+            try {
+                transport.connect("ilonach003@gmail.com","03012003ch");
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
             try {
                 transport.sendMessage(message,message.getAllRecipients());
                 transport.close();
