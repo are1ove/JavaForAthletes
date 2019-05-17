@@ -81,11 +81,12 @@ public class HomeController extends Controller{
             e.printStackTrace();
         }
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+                idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         keyColumn.setCellValueFactory(new PropertyValueFactory<>("key"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         creatorColumn.setCellValueFactory(new PropertyValueFactory<>("creator"));
 
+        Objects_table.setEditable(true);
         Objects_table.setItems(oblist);
         keyColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         keyColumn.setOnEditCommit(
@@ -104,7 +105,7 @@ public class HomeController extends Controller{
                     @Override
                     public void handle(TableColumn.CellEditEvent<ObjectsTable, String> event) {
                         event.getTableView().getItems().get(
-                                event.getTablePosition().getColumn()
+                                event.getTablePosition().getRow()
                         ).setName(event.getNewValue());
                     }
                 }
@@ -120,5 +121,13 @@ public class HomeController extends Controller{
                     }
                 }
         );
+
+        insert_btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                oblist.add(new ObjectsTable(1, Edit_key.getText(), Edit_name.getText(), "creator"));
+            }
+        });
     }
 }
+
