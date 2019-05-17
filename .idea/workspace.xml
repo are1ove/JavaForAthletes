@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="Pre-final 3.0 version without Lambda and API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/view/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/view/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_server/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client_server/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/app.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="162">
+              <caret line="69" column="97" selection-start-line="69" selection-start-column="97" selection-end-line="69" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,10 +102,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_server/Server.java">
+        <entry file="file://$PROJECT_DIR$/src/src/Func.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+            <state relative-caret-position="315">
+              <caret line="401" column="55" selection-start-line="401" selection-start-column="55" selection-end-line="401" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client_server/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1111">
+              <caret line="115" column="29" selection-start-line="113" selection-start-column="16" selection-end-line="115" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,7 +128,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/DataBaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="210">
               <caret line="19" column="57" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,7 +140,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/ObjectsTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
+            <state relative-caret-position="345">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="e#351#352#0" expanded="true" />
@@ -223,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/Controllers/SignUpController.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Controller.java" />
-        <option value="$PROJECT_DIR$/src/client_server/Controller.java" />
         <option value="$PROJECT_DIR$/src/client_server/SignUpController.java" />
         <option value="$PROJECT_DIR$/src/src/DataBaseHandler.java" />
         <option value="$PROJECT_DIR$/src/client_server/Status.java" />
@@ -231,6 +248,7 @@
         <option value="$PROJECT_DIR$/src/src/Func.java" />
         <option value="$PROJECT_DIR$/src/src/ObjectsTable.java" />
         <option value="$PROJECT_DIR$/src/src/Configs.java" />
+        <option value="$PROJECT_DIR$/src/client_server/Controller.java" />
         <option value="$PROJECT_DIR$/src/client_server/HomeController.java" />
       </list>
     </option>
@@ -246,7 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -282,6 +299,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,7 +352,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client_server.Client" />
       <module name="JavaForAthletes" />
@@ -470,6 +488,8 @@
       <workItem from="1558100188596" duration="39000" />
       <workItem from="1558115897820" duration="130000" />
       <workItem from="1558126071371" duration="480000" />
+      <workItem from="1558132254668" duration="450000" />
+      <workItem from="1558132800616" duration="215000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -685,7 +705,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186298000" />
+    <option name="totallyTimeSpent" value="186963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -700,7 +720,7 @@
     <frame x="31" y="23" width="1365" height="783" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7120344" visible="true" weight="0.28117913" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7120344" visible="true" weight="0.2887377" />
       <window_info id="Structure" order="1" sideWeight="0.28796563" side_tool="true" weight="0.20073801" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -709,7 +729,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50177306" side_tool="true" weight="0.24391988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.69527894" weight="0.33285093" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.69527894" weight="0.43270624" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2618658" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1012,16 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-33">
@@ -1029,16 +1039,6 @@
           <folding>
             <element signature="e#983#984#0" expanded="true" />
             <element signature="e#1011#1012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_server/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1055,9 +1055,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="116" column="33" lean-forward="true" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/DataBaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="210">
           <caret line="19" column="57" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1067,7 +1074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/ObjectsTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
+        <state relative-caret-position="345">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="e#351#352#0" expanded="true" />
@@ -1088,6 +1095,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_server/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1111">
+          <caret line="115" column="29" selection-start-line="113" selection-start-column="16" selection-end-line="115" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/src/Configs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1095,17 +1112,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+        <state relative-caret-position="315">
+          <caret line="401" column="55" selection-start-line="401" selection-start-column="55" selection-end-line="401" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="162">
+          <caret line="69" column="97" selection-start-line="69" selection-start-column="97" selection-end-line="69" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

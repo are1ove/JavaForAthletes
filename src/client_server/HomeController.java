@@ -12,12 +12,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.Region;
 import src.Const;
 import src.ObjectsTable;
 
@@ -69,11 +67,11 @@ public class HomeController extends Controller {
         int last_id = 0;
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/base", "us", "qwerty");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tests", "pg", "studs");
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM " + Const.ANIMAL_TABLE);
             while (rs.next()) {
                 oblist.add(new ObjectsTable(rs.getInt("id_objects"), rs.getString("key"),
-                        rs.getString("name")));
+                        rs.getString("name"), "creator"));
                 last_id = rs.getInt("id_objects");
             }
         } catch (SQLException e) {
@@ -109,23 +107,28 @@ public class HomeController extends Controller {
                     }
                 }
         );
-        creatorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        creatorColumn.setOnEditCommit(
-                new EventHandler<TableColumn.CellEditEvent<ObjectsTable, String>>() {
-                    @Override
-                    public void handle(TableColumn.CellEditEvent<ObjectsTable, String> event) {
-                        event.getTableView().getItems().get(
-                                event.getTablePosition().getColumn()
-                        ).setCreator(event.getNewValue());
-                    }
-                }
-        );
 
         int finalLast_id = last_id;
         insert_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                oblist.add(new ObjectsTable(finalLast_id +1, Edit_key.getText(), Edit_name.getText()));
+                String editKey = Edit_key.getText().trim();
+                String editName = Edit_name.getText().trim();
+                if (!editKey.equals("") && !editName.equals("")) {
+                    if ((editName.contains("Страшный зверь") || editName.contains("Неизвестный зверь")) && editKey.contains("Зверь")) {
+                        oblist.add(new ObjectsTable(finalLast_id + 1, Edit_key.getText(), Edit_name.getText(), "creator"));
+                    }
+                    else{
+                        Alert alert = new Alert(Alert.AlertType.ERROR, "Имя и ключ должны быть в формате - Пример: Зверь1 Страшный зверь 1");
+                        alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                        alert.show();
+                    }
+                }
+                else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Не оставляйте поля пустыми!");
+                    alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                    alert.show();
+                }
             }
         });
     }
