@@ -65,5 +65,38 @@ public class HomeController extends Controller{
         creatorColumn.setCellValueFactory(new PropertyValueFactory<>("creator"));
 
         Objects_table.setItems(oblist);
+        keyColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        keyColumn.setOnEditCommit(
+                new EventHandler<TableColumn.CellEditEvent<ObjectsTable, String>>() {
+                    @Override
+                    public void handle(TableColumn.CellEditEvent<ObjectsTable, String> event) {
+                        event.getTableView().getItems().get(
+                                event.getTablePosition().getColumn()
+                        ).setKey(event.getNewValue());
+                    }
+                }
+        );
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        nameColumn.setOnEditCommit(
+                new EventHandler<TableColumn.CellEditEvent<ObjectsTable, String>>() {
+                    @Override
+                    public void handle(TableColumn.CellEditEvent<ObjectsTable, String> event) {
+                        event.getTableView().getItems().get(
+                                event.getTablePosition().getColumn()
+                        ).setName(event.getNewValue());
+                    }
+                }
+        );
+        creatorColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        creatorColumn.setOnEditCommit(
+                new EventHandler<TableColumn.CellEditEvent<ObjectsTable, String>>() {
+                    @Override
+                    public void handle(TableColumn.CellEditEvent<ObjectsTable, String> event) {
+                        event.getTableView().getItems().get(
+                                event.getTablePosition().getColumn()
+                        ).setCreator(event.getNewValue());
+                    }
+                }
+        );
     }
 }
