@@ -1,6 +1,5 @@
 package client_server;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +9,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,11 +19,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import src.Const;
-import src.DataBaseHandler;
-import src.Func;
 import src.ObjectsTable;
 
-public class HomeController extends Controller{
+public class HomeController extends Controller {
 
     @FXML
     private ResourceBundle resources;
@@ -64,24 +62,25 @@ public class HomeController extends Controller{
     @FXML
     private Button exit_btn;
 
-    ObservableList<ObjectsTable>  oblist = FXCollections.observableArrayList();
+    ObservableList<ObjectsTable> oblist = FXCollections.observableArrayList();
 
     @FXML
     void initialize() {
-
+        int last_id = 0;
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tests", "pg", "studs");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM "+ Const.ANIMAL_TABLE);
-            while (rs.next()){
-                oblist.add(new ObjectsTable(rs.getInt("id_objects"),rs.getString("key"),
-                        rs.getString("name"), rs.getString("creator")));
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/base", "us", "qwerty");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM " + Const.ANIMAL_TABLE);
+            while (rs.next()) {
+                oblist.add(new ObjectsTable(rs.getInt("id_objects"), rs.getString("key"),
+                        rs.getString("name")));
+                last_id = rs.getInt("id_objects");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-                idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         keyColumn.setCellValueFactory(new PropertyValueFactory<>("key"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         creatorColumn.setCellValueFactory(new PropertyValueFactory<>("creator"));
@@ -122,12 +121,14 @@ public class HomeController extends Controller{
                 }
         );
 
+        int finalLast_id = last_id;
         insert_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                oblist.add(new ObjectsTable(1, Edit_key.getText(), Edit_name.getText(), "creator"));
+                oblist.add(new ObjectsTable(finalLast_id +1, Edit_key.getText(), Edit_name.getText()));
             }
         });
     }
 }
+
 
