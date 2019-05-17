@@ -1,8 +1,10 @@
-package Controllers;
+package client_server;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import client_server.Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,9 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import src.Func;
 
-import javax.mail.MessagingException;
-
-public class SignUpController {
+public class SignUpController extends Controller {
 
     @FXML
     private ResourceBundle resources;
@@ -43,7 +43,22 @@ public class SignUpController {
             String registerEmail = EmailField.getText().trim();
 
             if(!registerText.equals("") && !registerEmail.equals("")) {
-                String flag = theFunc.sign_up(registerText+" "+registerEmail);
+                Command cmd = Command.getCommand("sign_up" + ";" + registerText + ";" + registerEmail);
+                try {
+                    writer.writeObject(cmd);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Status status = null;
+                try {
+                    status = (Status) inFromServer.readObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                String flag = status.message;
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, flag);
                 alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
                 alert.show();

@@ -1,4 +1,4 @@
-package Controllers;
+package client_server;
 
 import java.net.URL;
 import java.util.ResourceBundle;
