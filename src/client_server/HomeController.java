@@ -10,10 +10,14 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import src.Const;
 import src.DataBaseHandler;
 import src.Func;
@@ -41,6 +45,24 @@ public class HomeController extends Controller{
 
     @FXML
     private TableColumn<ObjectsTable, String> creatorColumn;
+
+    @FXML
+    private Button save_btn;
+
+    @FXML
+    private Button remove_btn;
+
+    @FXML
+    private Button insert_btn;
+
+    @FXML
+    private TextField Edit_name;
+
+    @FXML
+    private TextField Edit_key;
+
+    @FXML
+    private Button exit_btn;
 
     ObservableList<ObjectsTable>  oblist = FXCollections.observableArrayList();
 
