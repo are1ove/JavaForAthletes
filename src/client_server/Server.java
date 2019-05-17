@@ -2,10 +2,10 @@ package client_server;
 
 import src.Func;
 
-import javax.mail.MessagingException;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.util.List;
 
 public class Server implements Runnable {

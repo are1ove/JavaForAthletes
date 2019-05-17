@@ -6,12 +6,12 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: aaf442 aaf442;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_server.HomeController">
     <center>
-        <TableView>
+        <TableView fx:id="Objects_table">
             <columns>
-                <TableColumn prefWidth="98.0" text="id_objects" fx:id="idColumn"/>
-                <TableColumn prefWidth="76.0" text="key" fx:id="keyColumn"/>
-                <TableColumn minWidth="0.0" prefWidth="82.0" text="name" fx:id="nameColumn"/>
-                <TableColumn prefWidth="98.0" text="creator" fx:id="creatorColumn"/>
+                <TableColumn fx:id="idColumn" prefWidth="140.0" text="id_objects" />
+                <TableColumn fx:id="keyColumn" minWidth="0.0" prefWidth="138.0" text="key" />
+                <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="151.0" text="name" />
+                <TableColumn fx:id="creatorColumn" minWidth="0.0" prefWidth="170.0" text="creator" />
             </columns>
         </TableView>
     </center>

@@ -1,5 +1,8 @@
 package src;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -49,7 +52,6 @@ public class Func {
         }
 
     }
-
 
 
     /**

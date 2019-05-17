@@ -1,5 +1,8 @@
 package client_server;
 
+import javafx.collections.ObservableList;
+import src.ObjectsTable;
+
 import java.io.Serializable;
 
 public class Status implements Serializable {
@@ -15,3 +18,4 @@ public class Status implements Serializable {
         return message;
     }
 }
+
