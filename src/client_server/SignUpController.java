@@ -36,6 +36,21 @@ public class SignUpController extends Controller {
     private TextField EmailField;
 
     @FXML
+    private MenuBar lg_menu;
+
+    @FXML
+    private Menu rus_menu;
+
+    @FXML
+    private Menu slv_menu;
+
+    @FXML
+    private Menu cat_menu;
+
+    @FXML
+    private Menu spa_menu;
+
+    @FXML
     void initialize() {
         Func theFunc = new Func();
         RegisterBtn.setOnAction(event -> {

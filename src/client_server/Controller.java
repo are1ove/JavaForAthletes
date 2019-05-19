@@ -47,11 +47,29 @@ public class Controller {
         }
     }
 
+    static String current_user_creator;
+
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
+
+    @FXML
+    private MenuBar lg_menu;
+
+    @FXML
+    private Menu rus_menu;
+
+    @FXML
+    private Menu slv_menu;
+
+    @FXML
+    private Menu cat_menu;
+
+    @FXML
+    private Menu spa_menu;
+
 
     @FXML
     private Button SignUpBtn;
@@ -90,6 +108,7 @@ public class Controller {
                 }
                 String flag = status.message;
                 if (status.message.equals("*Вход прошел успешно*")) {
+                    current_user_creator = loginText;
                     Stage stage = (Stage) LoginBtn.getScene().getWindow();
                     stage.close();
 

@@ -3,14 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: aaf442;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_server.SignUpController">
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: aaf442;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_server.SignUpController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -22,6 +23,17 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
+      <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="26.0">
+         <menus>
+            <Menu fx:id="rus_menu" mnemonicParsing="false" text="RUS" />
+            <Menu fx:id="slv_menu" mnemonicParsing="false" text="SLV" />
+            <Menu fx:id="cat_menu" mnemonicParsing="false" text="CAT" />
+            <Menu fx:id="spa_menu" mnemonicParsing="false" text="SPA" />
+         </menus>
+         <GridPane.margin>
+            <Insets bottom="100.0" />
+         </GridPane.margin>
+      </MenuBar>
       <Label text="Регистрация" GridPane.columnIndex="1">
          <font>
             <Font name="Arial Narrow Bold" size="32.0" />
@@ -30,7 +42,7 @@
             <Insets />
          </opaqueInsets>
          <GridPane.margin>
-            <Insets left="31.0" />
+            <Insets left="20.0" />
          </GridPane.margin>
       </Label>
       <Button fx:id="previousBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="Назад" GridPane.columnIndex="2">
@@ -38,15 +50,15 @@
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
          <GridPane.margin>
-            <Insets left="85.0" />
+            <Insets left="70.0" />
          </GridPane.margin>
       </Button>
-      <Label text="Логин:" GridPane.rowIndex="1">
+      <Label prefHeight="20.0" prefWidth="76.0" text="Логин:" GridPane.rowIndex="1">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
          <GridPane.margin>
-            <Insets left="175.0" />
+            <Insets left="150.0" />
          </GridPane.margin>
       </Label>
       <Label text="Email:" GridPane.rowIndex="1">
@@ -54,15 +66,15 @@
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
          <GridPane.margin>
-            <Insets left="175.0" top="60.0" />
+            <Insets left="153.0" top="60.0" />
          </GridPane.margin>
       </Label>
-      <Button fx:id="RegisterBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="Зарегистрироваться" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="RegisterBtn" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="Зарегистрироваться" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
          <GridPane.margin>
-            <Insets left="32.0" />
+            <Insets left="15.0" />
          </GridPane.margin>
       </Button>
       <TextField fx:id="LoginField" GridPane.columnIndex="1" GridPane.rowIndex="1">
