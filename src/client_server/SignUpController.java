@@ -42,13 +42,13 @@ public class SignUpController extends Controller {
     private Menu rus_menu;
 
     @FXML
-    private Menu slv_menu;
+    private Menu eng_menu;
 
     @FXML
-    private Menu cat_menu;
+    private Menu ee_menu;
 
     @FXML
-    private Menu spa_menu;
+    private Menu se_menu;
 
     @FXML
     void initialize() {

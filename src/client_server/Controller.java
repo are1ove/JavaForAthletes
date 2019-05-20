@@ -35,6 +35,9 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        catch (NullPointerException ex){
+            System.out.println("Вы не подключены к серверу");
+        }
     }
 
     static ObjectInputStream inFromServer;
@@ -44,6 +47,9 @@ public class Controller {
             inFromServer = new ObjectInputStream(clientSocket.getInputStream());
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        catch (NullPointerException ex){
+            System.out.println("Вы не подключены к серверу");
         }
     }
 
@@ -62,13 +68,13 @@ public class Controller {
     private Menu rus_menu;
 
     @FXML
-    private Menu slv_menu;
+    private Menu eng_menu;
 
     @FXML
-    private Menu cat_menu;
+    private Menu ee_menu;
 
     @FXML
-    private Menu spa_menu;
+    private Menu se_menu;
 
 
     @FXML
@@ -115,7 +121,7 @@ public class Controller {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/app.fxml"));
                     Parent root1 = null;
                     try {
-                        root1 = (Parent) fxmlLoader.load();
+                        root1 = fxmlLoader.load();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -3,6 +3,7 @@ package client_server;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.beans.binding.ObjectExpression;
@@ -12,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -23,7 +25,7 @@ import javafx.stage.Stage;
 import src.Const;
 import src.ObjectsTable;
 
-public class HomeController extends Controller {
+public class HomeController extends Controller implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -71,29 +73,32 @@ public class HomeController extends Controller {
     private Menu rus_menu;
 
     @FXML
-    private Menu slv_menu;
+    private Menu eng_menu;
 
     @FXML
-    private Menu cat_menu;
+    private Menu ee_menu;
 
     @FXML
-    private Menu spa_menu;
+    private Menu se_menu;
 
+    private ResourceBundle resourceBundle;
     ObservableList<ObjectsTable> oblist = FXCollections.observableArrayList();
 
     int last_id = 0;
 
     Connection dbconnection;
+
     public Connection getDbconnection() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
-        dbconnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tests", "pg", "studs");
+        dbconnection = DriverManager.getConnection("jdbc:postgresql://localhost:5433/base", "us", "qwerty");
         return dbconnection;
     }
 
-    @FXML
-    void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.resourceBundle = resources;
 
-        hello_label.setText("Привет, "+current_user_creator);
+        hello_label.setText(resourceBundle.getString("key.app.greeting") + "," + current_user_creator);
 
 
         try {
@@ -119,7 +124,7 @@ public class HomeController extends Controller {
         Objects_table.setItems(oblist);
 
 
-        /*keyColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        keyColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         keyColumn.setOnEditCommit(
                 new EventHandler<TableColumn.CellEditEvent<ObjectsTable, String>>() {
                     @Override
@@ -141,8 +146,35 @@ public class HomeController extends Controller {
                     }
                 }
         );
-        */
 
+        rus_menu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("ru","RU")));
+            }
+        });
+        eng_menu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("en","AU")));
+            }
+        });
+        ee_menu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("et","EE")));
+            }
+        });
+        se_menu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("sv","SE")));
+            }
+        });
 
         insert_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -200,18 +232,16 @@ public class HomeController extends Controller {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                    else{
+                    } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR, "Имя и ключ должны быть в формате - Пример: Зверь1 Страшный зверь 1");
-                        alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                        alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label) node).setMinHeight(Region.USE_PREF_SIZE));
                         alert.show();
                         Edit_name.clear();
                         Edit_key.clear();
                     }
-                }
-                else{
+                } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Не оставляйте поля пустыми!");
-                    alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                    alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label) node).setMinHeight(Region.USE_PREF_SIZE));
                     alert.show();
                 }
             }
@@ -264,19 +294,17 @@ public class HomeController extends Controller {
                         signAss(editKey, current_user_creator, "remove");
                         Edit_name.clear();
                         Edit_key.clear();
-                    }
-                    else{
+                    } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR, "Вы не можете удалить данный объект, т.к. он создан другим пользователем!");
-                        alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                        alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label) node).setMinHeight(Region.USE_PREF_SIZE));
                         alert.show();
                         Edit_name.clear();
                     }
 
-                }
-                else {
+                } else {
                     final char dm = (char) 34;
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Не оставляйте поле " + dm + "key"+ dm + " пустым!");
-                    alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label)node).setMinHeight(Region.USE_PREF_SIZE));
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Не оставляйте поле " + dm + "key" + dm + " пустым!");
+                    alert.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label) node).setMinHeight(Region.USE_PREF_SIZE));
                     alert.show();
                 }
             }
@@ -285,8 +313,7 @@ public class HomeController extends Controller {
     }
 
 
-
-    public ResultSet getremoveAnimal(String key, String user_login){
+    public ResultSet getremoveAnimal(String key, String user_login) {
         ResultSet resultSet = null;
 
         String select = "SELECT * FROM " + Const.ANIMAL_TABLE + " WHERE " +
@@ -305,7 +332,7 @@ public class HomeController extends Controller {
         return resultSet;
     }
 
-    public ResultSet getAnimalKey(String key){
+    public ResultSet getAnimalKey(String key) {
         ResultSet resultSet = null;
 
         String select = "SELECT * FROM " + Const.ANIMAL_TABLE + " WHERE " +
@@ -323,7 +350,7 @@ public class HomeController extends Controller {
         return resultSet;
     }
 
-    public void signAss(String key, String user, String action){
+    public void signAss(String key, String user, String action) {
         String ass_insert = "INSERT INTO " + Const.ASS_TABLE + "(" +
                 Const.ASS_OBJECT_KEY + "," +
                 Const.ASS_USERNAME + "," +
@@ -342,7 +369,7 @@ public class HomeController extends Controller {
         }
     }
 
-    public void signUpAnimal(String key, String name, String user_login){
+    public void signUpAnimal(String key, String name, String user_login) {
         String insert = "INSERT INTO " + Const.ANIMAL_TABLE + "(" +
                 Const.ANIMAL_KEY + "," +
                 Const.ANIMAL_NAME + "," +
@@ -361,7 +388,7 @@ public class HomeController extends Controller {
         }
     }
 
-    public void renameAnimal(String key, String name){
+    public void renameAnimal(String key, String name) {
         String update = "UPDATE " + Const.ANIMAL_TABLE + " SET " +
                 Const.ANIMAL_NAME + "=?" + " WHERE " +
                 Const.ANIMAL_KEY + "=?";
@@ -377,8 +404,8 @@ public class HomeController extends Controller {
         }
     }
 
-    public void removeAnimal(String key, String user_login){
-        String delete = "DELETE FROM " + Const.ANIMAL_TABLE  + " WHERE " +
+    public void removeAnimal(String key, String user_login) {
+        String delete = "DELETE FROM " + Const.ANIMAL_TABLE + " WHERE " +
                 Const.ANIMAL_KEY + "=? AND " +
                 Const.ANIMAL_CREATOR + "=?";
         try {
@@ -392,6 +419,7 @@ public class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+
 
 }
 

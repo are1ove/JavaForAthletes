@@ -1,49 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #B3F287#B3F287;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.Controllers.SignUpController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: aaf442;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_server.Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <Label layoutX="264.0" layoutY="33.0" text="Авторизация">
+      <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="26.0">
+         <menus>
+            <Menu fx:id="rus_menu" mnemonicParsing="false" text="RUS" />
+            <Menu fx:id="slv_menu" mnemonicParsing="false" text="SLV" />
+            <Menu fx:id="cat_menu" mnemonicParsing="false" text="CAT" />
+            <Menu fx:id="spa_menu" mnemonicParsing="false" text="SPA" />
+         </menus>
+         <GridPane.margin>
+            <Insets bottom="100.0" />
+         </GridPane.margin>
+      </MenuBar>
+      <Label text="%key.home.authorization" GridPane.columnIndex="1">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
          <font>
             <Font name="Arial Narrow Bold" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="SignUpBtn" layoutX="514.0" layoutY="15.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="172.0" style="-fx-background-color: #FFFFFFFF;" text="Зарегистрироваться">
+      <Button fx:id="SignUpBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="%key.home.register" GridPane.columnIndex="2">
          <font>
-            <Font name="Arial Narrow Bold" size="16.0" />
+            <Font name="Arial Narrow Bold" size="17.0" />
          </font>
+         <GridPane.margin>
+            <Insets left="17.0" />
+         </GridPane.margin>
       </Button>
-      <TextField fx:id="LoginField" layoutX="225.0" layoutY="155.0" prefHeight="42.0" prefWidth="300.0" promptText="Логин">
+      <Label text="%key.home.login" GridPane.rowIndex="1">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
+         <padding>
+            <Insets left="140.0" />
+         </padding>
+      </Label>
+      <Label text="%key.home.password" GridPane.rowIndex="1">
+         <font>
+            <Font name="Arial Narrow Bold" size="17.0" />
+         </font>
+         <padding>
+            <Insets left="140.0" top="60.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="LoginField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
       </TextField>
-      <PasswordField fx:id="PasswordField" layoutX="225.0" layoutY="241.0" prefHeight="42.0" prefWidth="300.0" promptText="Пароль">
-         <font>
-            <Font name="Arial Narrow Bold" size="17.0" />
-         </font>
+      <PasswordField fx:id="PasswordField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets top="60.0" />
+         </GridPane.margin>
       </PasswordField>
-      <Label layoutX="167.0" layoutY="166.0" prefHeight="20.0" prefWidth="53.0" text="Логин:">
+      <Button fx:id="LoginBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="%key.home.entry" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
-      </Label>
-      <Label layoutX="158.0" layoutY="252.0" text="Пароль:">
-         <font>
-            <Font name="Arial Narrow Bold" size="17.0" />
-         </font>
-      </Label>
-      <Button fx:id="LoginBtn" layoutX="308.0" layoutY="313.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: FFFFFF;" text="Войти">
-         <font>
-            <Font name="Arial Narrow Bold" size="17.0" />
-         </font>
+         <GridPane.margin>
+            <Insets left="65.0" />
+         </GridPane.margin>
       </Button>
    </children>
-</AnchorPane>
+</GridPane>

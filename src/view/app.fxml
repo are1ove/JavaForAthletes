@@ -20,8 +20,8 @@
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="76.0" text="id_objects" />
                 <TableColumn fx:id="keyColumn" minWidth="0.0" prefWidth="98.0" text="key" />
-                <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="209.0" text="name" />
-                <TableColumn fx:id="creatorColumn" maxWidth="152.0" minWidth="0.0" prefWidth="112.5" text="creator" />
+                <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="104.0" text="name" />
+                <TableColumn fx:id="creatorColumn" maxWidth="217.5" minWidth="0.0" prefWidth="154.5" text="creator" />
             </columns>
         </TableView>
     </center>
@@ -38,22 +38,22 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="remove_btn" mnemonicParsing="false" text="remove" GridPane.columnIndex="3">
+            <Button fx:id="remove_btn" mnemonicParsing="false" text="%key.app.remove" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets left="30.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="insert_btn" mnemonicParsing="false" text="insert" GridPane.columnIndex="2">
+            <Button fx:id="insert_btn" mnemonicParsing="false" text="%key.app.insert" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="30.0" />
                </GridPane.margin>
             </Button>
-            <TextField fx:id="Edit_name" promptText="name" GridPane.columnIndex="1">
+            <TextField fx:id="Edit_name" promptText="%key.app.name" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="Edit_key" promptText="key">
+            <TextField fx:id="Edit_key" promptText="%key.app.key">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
@@ -62,7 +62,7 @@
       </GridPane>
    </bottom>
    <right>
-      <Button fx:id="exit_btn" alignment="TOP_CENTER" mnemonicParsing="false" text="exit" BorderPane.alignment="TOP_CENTER">
+      <Button fx:id="exit_btn" alignment="TOP_CENTER" mnemonicParsing="false" text="%key.app.exit" BorderPane.alignment="TOP_CENTER">
          <BorderPane.margin>
             <Insets left="5.0" right="5.0" />
          </BorderPane.margin>
@@ -83,7 +83,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="hello_label" text="Привет, user">
+                  <Label fx:id="hello_label" text="%key.app.greeting">
                      <font>
                         <Font name="Arial Narrow Bold" size="16.0" />
                      </font>
@@ -94,9 +94,9 @@
                   <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1">
                     <menus>
                       <Menu fx:id="rus_menu" mnemonicParsing="false" text="RUS" />
-                      <Menu fx:id="slv_menu" mnemonicParsing="false" text="SLV" />
-                      <Menu fx:id="cat_menu" mnemonicParsing="false" text="CAT" />
-                        <Menu fx:id="spa_menu" mnemonicParsing="false" text="SPA" />
+                      <Menu fx:id="eng_menu" mnemonicParsing="false" text="ENG" />
+                      <Menu fx:id="se_menu" mnemonicParsing="false" text="SE" />
+                        <Menu fx:id="ee_menu" mnemonicParsing="false" text="EE" />
                     </menus>
                      <GridPane.margin>
                         <Insets left="60.0" right="5.0" top="5.0" />

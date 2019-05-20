@@ -1,7 +1,7 @@
 package src;
 
 public class Configs {
-    protected String dbUser = "pg";
-    protected String dbPassword = "studs";
-    protected String dbUrl = "jdbc:postgresql://localhost:5432/tests";
+    protected String dbUser = "us";
+    protected String dbPassword = "qwerty";
+    protected String dbUrl = "jdbc:postgresql://localhost:5433/base";
 }

@@ -1,16 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #B3F287#B3F287;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="client_server.HomeController">
-    <children>
-        <Label fx:id="HomeText" layoutX="262.0" layoutY="14.0" prefHeight="37.0" prefWidth="177.0" text="Привет, user ">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: aaf442 aaf442;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_server.HomeController">
+    <center>
+        <TableView fx:id="Objects_table" prefHeight="333.0" prefWidth="449.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="76.0" text="id_objects" />
+                <TableColumn fx:id="keyColumn" minWidth="0.0" prefWidth="98.0" text="key" />
+                <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="104.0" text="name" />
+                <TableColumn fx:id="creatorColumn" maxWidth="217.5" minWidth="0.0" prefWidth="154.5" text="creator" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="remove_btn" mnemonicParsing="false" text="%key.app.remove" GridPane.columnIndex="3">
+                    <GridPane.margin>
+                        <Insets left="30.0" />
+                    </GridPane.margin>
+                </Button>
+                <Button fx:id="insert_btn" mnemonicParsing="false" text="%key.app.insert" GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets left="30.0" />
+                    </GridPane.margin>
+                </Button>
+                <TextField fx:id="Edit_name" promptText="%key.app.name" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="Edit_key" promptText="%key.app.key">
+                    <GridPane.margin>
+                        <Insets left="5.0" />
+                    </GridPane.margin>
+                </TextField>
+            </children>
+        </GridPane>
+    </bottom>
+    <right>
+        <Button fx:id="exit_btn" alignment="TOP_CENTER" mnemonicParsing="false" text="%key.app.exit" BorderPane.alignment="TOP_CENTER">
+            <BorderPane.margin>
+                <Insets left="5.0" right="5.0" />
+            </BorderPane.margin>
+        </Button>
+    </right>
+    <top>
+        <Label fx:id="hello_label" alignment="CENTER" contentDisplay="TOP" prefHeight="37.0" prefWidth="157.0" text="Привет, user" BorderPane.alignment="CENTER">
             <font>
-                <Font name="Arial Narrow Bold" size="32.0" />
+                <Font name="Arial Narrow Bold" size="17.0" />
             </font>
-        </Label>
-    </children>
-</AnchorPane>
+            <graphic>
+                <GridPane prefHeight="30.0" prefWidth="602.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="hello_label" text="Привет, user">
+                            <font>
+                                <Font name="Arial Narrow Bold" size="16.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="55.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" GridPane.columnIndex="1">
+                            <menus>
+                                <Menu fx:id="rus_menu" mnemonicParsing="false" text="RUS" />
+                                <Menu fx:id="slv_menu" mnemonicParsing="false" text="SLV" />
+                                <Menu fx:id="cat_menu" mnemonicParsing="false" text="CAT" />
+                                <Menu fx:id="spa_menu" mnemonicParsing="false" text="SPA" />
+                            </menus>
+                            <GridPane.margin>
+                                <Insets left="60.0" right="5.0" top="5.0" />
+                            </GridPane.margin>
+                        </MenuBar>
+                    </children>
+                </GridPane>
+            </graphic></Label>
+    </top>
+    <left>
+        <Label prefHeight="17.0" prefWidth="51.0" BorderPane.alignment="CENTER" />
+    </left>
+</BorderPane>
