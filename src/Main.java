@@ -19,7 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles/Locale");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.Locale");
         Parent root = load(getClass().getResource("/view/sample.fxml"), resourceBundle);
         primaryStage.setTitle("Last Lab!");
         primaryStage.setScene(new Scene(root, 600, 400));
