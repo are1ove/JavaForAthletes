@@ -151,28 +151,28 @@ public class HomeController extends Controller implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("ru","RU")));
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale_ru_RU"));
             }
         });
         eng_menu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("en","AU")));
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale_en_AU"));
             }
         });
         ee_menu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("et","EE")));
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale_et_EE"));
             }
         });
         se_menu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setResources(ResourceBundle.getBundle("bundles/Locale", new Locale("sv","SE")));
+                fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale_sv_SE"));
             }
         });
 
