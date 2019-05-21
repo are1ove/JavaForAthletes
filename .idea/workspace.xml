@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_server/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/HomeController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="153" column="87" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
+            <state relative-caret-position="301">
+              <caret line="170" column="15" selection-start-line="170" selection-start-column="15" selection-end-line="170" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -261,13 +260,6 @@
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bundles" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource Bundle 'Locale'" type="a6c14932:ResourceBundleNode" />
-            </path>
-            <path>
-              <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client_server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -286,7 +278,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558429989514" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558455591912" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -476,7 +468,7 @@
       <workItem from="1558361821960" duration="724000" />
       <workItem from="1558362919214" duration="10329000" />
       <workItem from="1558376016258" duration="320000" />
-      <workItem from="1558376360121" duration="3970000" />
+      <workItem from="1558376360121" duration="4962000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -702,11 +694,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558429756914</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Localisation 2.0(Troubles with transition to previous window)">
+      <created>1558430036145</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558430036145</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210612000" />
+    <option name="totallyTimeSpent" value="211604000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,6 +718,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7120344" visible="true" weight="0.1981402" />
       <window_info id="Structure" order="1" sideWeight="0.28796563" side_tool="true" weight="0.20073801" />
@@ -769,7 +769,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First step2 to console application" />
     <MESSAGE value="First step3 to console application" />
     <MESSAGE value="First step4 to console application(added remove)" />
     <MESSAGE value="I have done &quot;save&quot; function" />
@@ -794,7 +793,8 @@
     <MESSAGE value="Pre-final 3.0 version without Lambda and API" />
     <MESSAGE value="Localisation(Troubles with JavaFX)" />
     <MESSAGE value="Localisation(Troubles with transition to previous window)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Localisation(Troubles with transition to previous window)" />
+    <MESSAGE value="Localisation 2.0(Troubles with transition to previous window)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Localisation 2.0(Troubles with transition to previous window)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1134,8 +1134,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="153" column="87" selection-start-line="153" selection-start-column="87" selection-end-line="153" selection-end-column="87" />
+        <state relative-caret-position="301">
+          <caret line="170" column="15" selection-start-line="170" selection-start-column="15" selection-end-line="170" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
