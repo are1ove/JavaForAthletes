@@ -6,6 +6,8 @@ import java.io.ObjectOutputStream;
 import java.net.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import animations.Shake;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -124,9 +126,16 @@ public class Controller {
                     stage.setScene(new Scene(root1));
                     stage.show();
                 } else {
+
                     Alert alert1 = new Alert(Alert.AlertType.ERROR, "Неправильный логин или пароль");
                     alert1.getDialogPane().getChildren().stream().filter(node -> node instanceof Label).forEach(node -> ((Label) node).setMinHeight(Region.USE_PREF_SIZE));
                     alert1.show();
+                    Shake alAnim = new Shake(alert1.getGraphic());
+                    Shake logAnim = new Shake(LoginField);
+                    Shake pasAnim = new Shake(PasswordField);
+                    alAnim.playAnim();
+                    logAnim.playAnim();
+                    pasAnim.playAnim();
                 }
             }
             else{

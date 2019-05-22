@@ -1,38 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="Pre-final 3.0 version without Lambda and API">
-      <change afterPath="$PROJECT_DIR$/src/bundles/Locale_en_AU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bundles/Locale_et_EE.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bundles/Locale_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bundles/Locale_sv_SE.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3dd4fe86-2e32-4a7d-8e05-0d341bf5e6f9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3dd4fe86-2e32-4a7d-8e05-0d341bf5e6f9.xml" afterDir="false" />
+    <list default="true" id="bd36b549-a962-4034-972e-0d20d831ef9f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/animations/Shake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/META-INF/JavaForAthletes.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/client_server/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/client_server/SignUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/src/Configs.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/src/Configs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/src/Func.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/src/Func.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/view/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/view/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/production/JavaForAthletes/view/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/production/JavaForAthletes/view/signUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client_server/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_server/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_server/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_server/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/Func.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Func.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/signUp.fxml" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,33 +38,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="100" column="67" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_server/SignUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/Func.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
+            <state relative-caret-position="6720">
               <caret line="448" column="128" selection-start-line="448" selection-start-column="128" selection-end-line="448" selection-end-column="128" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client_server/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="140" column="103" selection-start-line="140" selection-start-column="103" selection-end-line="140" selection-end-column="103" />
+            <state relative-caret-position="331">
+              <caret line="136" column="17" lean-forward="true" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,12 +64,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="465">
+              <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#818#819#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/animations/Shake.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#414#415#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client_server/Command.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,8 +149,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Properties" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -198,7 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Beasts.java" />
         <option value="$PROJECT_DIR$/src/server/Server.java" />
         <option value="$PROJECT_DIR$/src/src/ComandTracker.java" />
@@ -248,11 +223,12 @@
         <option value="$PROJECT_DIR$/src/bundles/Locale_ru_RU.properties" />
         <option value="$PROJECT_DIR$/src/client_server/HomeController.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/animations/Shake.java" />
         <option value="$PROJECT_DIR$/src/client_server/Controller.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="31" />
     <option name="y" value="23" />
     <option name="width" value="1365" />
@@ -266,7 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,6 +254,12 @@
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaForAthletes" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="animations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaForAthletes" type="b2602c69:ProjectViewProjectNode" />
@@ -301,7 +283,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,7 +295,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558559029725" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558563115629" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -497,6 +479,7 @@
       <workItem from="1558465122517" duration="752000" />
       <workItem from="1558466043608" duration="794000" />
       <workItem from="1558536335832" duration="5879000" />
+      <workItem from="1558561126929" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="First step to console application">
       <created>1551464261523</created>
@@ -708,11 +691,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556190719086</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Смотри Controller, там при нажатии на кнопку должна меняться Локаль, в этом проблема">
+      <created>1558561279743</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1558561279743</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205329000" />
+    <option name="totallyTimeSpent" value="206754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -724,9 +714,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7120344" visible="true" weight="0.19027181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7120344" visible="true" weight="0.16881259" />
       <window_info id="Structure" order="1" sideWeight="0.28796563" side_tool="true" weight="0.20073801" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -735,7 +726,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50177306" side_tool="true" weight="0.24391988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.69527894" visible="true" weight="0.30722892" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.69527894" weight="0.30722892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2618658" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -745,7 +736,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.32733223" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50110704" side_tool="true" weight="0.28366762" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49642345" weight="0.4819103" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49642345" visible="true" weight="0.19036144" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.498893" weight="0.3295129" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -799,7 +790,8 @@
     <MESSAGE value="Pre-final 2.0 version" />
     <MESSAGE value="Pre-final 3.0 version" />
     <MESSAGE value="Pre-final 3.0 version without Lambda and API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-final 3.0 version without Lambda and API" />
+    <MESSAGE value="Смотри Controller, там при нажатии на кнопку должна меняться Локаль, в этом проблема" />
+    <option name="LAST_COMMIT_MESSAGE" value="Смотри Controller, там при нажатии на кнопку должна меняться Локаль, в этом проблема" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -823,8 +815,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Downloads/jdk-11.0.1-2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Runnable.java" />
-    <entry file="file://$PROJECT_DIR$/src/src/CommandTraker.java" />
     <entry file="file://$PROJECT_DIR$/src/src/DadsDisease.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -945,16 +935,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MySocket.java" />
     <entry file="file://$PROJECT_DIR$/src/Controllers/MySocket.java" />
-    <entry file="file://$PROJECT_DIR$/src/client_server/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
@@ -1056,29 +1036,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
+    <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="448" column="128" selection-start-line="448" selection-start-column="128" selection-end-line="448" selection-end-column="128" />
+        <state relative-caret-position="1500">
+          <caret line="100" column="67" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_et_EE.properties">
-      <provider editor-type-id="ResourceBundle" />
+    <entry file="file://$PROJECT_DIR$/src/client_server/SignUpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="1455">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_sv_SE.properties">
-      <provider editor-type-id="ResourceBundle" />
+    <entry file="file://$PROJECT_DIR$/src/src/Func.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="6720">
+          <caret line="448" column="128" selection-start-line="448" selection-start-column="128" selection-end-line="448" selection-end-column="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,32 +1085,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_server/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_sv_SE.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="100" column="67" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_et_EE.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_en_GB.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="465">
+          <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_server/SignUpController.java">
+    <entry file="file://$PROJECT_DIR$/src/animations/Shake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="128">
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_server/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1135,8 +1139,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client_server/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="140" column="103" selection-start-line="140" selection-start-column="103" selection-end-line="140" selection-end-column="103" />
+        <state relative-caret-position="331">
+          <caret line="136" column="17" lean-forward="true" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
