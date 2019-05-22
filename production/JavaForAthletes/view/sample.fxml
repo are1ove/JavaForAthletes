@@ -24,18 +24,18 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="26.0">
+      <MenuBar fx:id="lg_menu" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="208.0">
          <menus>
-            <Menu fx:id="rus_menu" mnemonicParsing="false" text="RUS" />
-            <Menu fx:id="slv_menu" mnemonicParsing="false" text="SLV" />
-            <Menu fx:id="cat_menu" mnemonicParsing="false" text="CAT" />
-            <Menu fx:id="spa_menu" mnemonicParsing="false" text="SPA" />
+            <Menu fx:id="rus_menu" mnemonicParsing="false" text="RU" />
+            <Menu fx:id="eng_menu" mnemonicParsing="false" text="ENG" />
+            <Menu fx:id="est_menu" mnemonicParsing="false" text="EST" />
+            <Menu fx:id="swe_menu" mnemonicParsing="false" text="SWE" />
          </menus>
          <GridPane.margin>
             <Insets bottom="100.0" />
          </GridPane.margin>
       </MenuBar>
-      <Label text="Авторизация" GridPane.columnIndex="1">
+      <Label text="%key.home.authorization" GridPane.columnIndex="1">
          <padding>
             <Insets left="15.0" />
          </padding>
@@ -43,7 +43,7 @@
             <Font name="Arial Narrow Bold" size="32.0" />
          </font>
       </Label>
-      <Button fx:id="SignUpBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="Зарегистрироваться" GridPane.columnIndex="2">
+      <Button fx:id="SignUpBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="%key.home.register" GridPane.columnIndex="2">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
@@ -51,7 +51,7 @@
             <Insets left="17.0" />
          </GridPane.margin>
       </Button>
-      <Label text="Логин:" GridPane.rowIndex="1">
+      <Label text="%key.home.login" GridPane.rowIndex="1">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
@@ -59,7 +59,7 @@
             <Insets left="140.0" />
          </padding>
       </Label>
-      <Label text="Пароль:" GridPane.rowIndex="1">
+      <Label text="%key.home.password" GridPane.rowIndex="1">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>
@@ -77,7 +77,7 @@
             <Insets top="60.0" />
          </GridPane.margin>
       </PasswordField>
-      <Button fx:id="LoginBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="Войти" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="LoginBtn" mnemonicParsing="false" style="-fx-background-color: ffffff;" text="%key.home.entry" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font name="Arial Narrow Bold" size="17.0" />
          </font>

@@ -84,7 +84,7 @@ public class Func {
         if (countername == 0 & counteremail == 0) {
             final Properties properties = new Properties();
             try {
-                properties.load(new FileInputStream("/Users/ilya/Documents/Учеба/Программирование/lab5/JavaForAthletes/mail.properties"));
+                properties.load(new FileInputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/mail.properties"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -244,7 +244,7 @@ public class Func {
      * @since 1.0
      */
     public String save() {
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/SomeBeasts.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/src/src/SomeBeasts.json")) {
             DataBaseHandler dataBaseHandler = new DataBaseHandler();
             ResultSet resultSet = dataBaseHandler.getAnimals();
             try {
@@ -446,7 +446,7 @@ public class Func {
     }
 
     public void backupsave() {
-        try (FileOutputStream fos = new FileOutputStream("/Users/ilya/Desktop/backup.json")) {
+        try (FileOutputStream fos = new FileOutputStream("/Users/valeriy/Documents/JavaProgramms/JavaForAthletes/backupfile.json")) {
             DataBaseHandler dataBaseHandler = new DataBaseHandler();
             ResultSet resultSet = dataBaseHandler.getAnimals();
             try {

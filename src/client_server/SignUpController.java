@@ -24,6 +24,21 @@ public class SignUpController extends Controller {
     private URL location;
 
     @FXML
+    private MenuBar lg_menu;
+
+    @FXML
+    private Menu rus_menu;
+
+    @FXML
+    private Menu eng_menu;
+
+    @FXML
+    private Menu est_menu;
+
+    @FXML
+    private Menu swe_menu;
+
+    @FXML
     private Button previousBtn;
 
     @FXML
@@ -34,21 +49,6 @@ public class SignUpController extends Controller {
 
     @FXML
     private TextField EmailField;
-
-    @FXML
-    private MenuBar lg_menu;
-
-    @FXML
-    private Menu rus_menu;
-
-    @FXML
-    private Menu slv_menu;
-
-    @FXML
-    private Menu cat_menu;
-
-    @FXML
-    private Menu spa_menu;
 
     @FXML
     void initialize() {

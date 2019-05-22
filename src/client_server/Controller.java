@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.*;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -62,14 +63,13 @@ public class Controller {
     private Menu rus_menu;
 
     @FXML
-    private Menu slv_menu;
+    private Menu eng_menu;
 
     @FXML
-    private Menu cat_menu;
+    private Menu est_menu;
 
     @FXML
-    private Menu spa_menu;
-
+    private Menu swe_menu;
 
     @FXML
     private Button SignUpBtn;
@@ -135,7 +135,11 @@ public class Controller {
                 alert.show();
             }
         });
-
+        rus_menu.setOnAction(event -> {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("view/sample.fxml"));
+            fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale", new Locale("ru","RU")));
+        });
         SignUpBtn.setOnAction(event -> {
             Stage stage = (Stage) SignUpBtn.getScene().getWindow();
             stage.close();
