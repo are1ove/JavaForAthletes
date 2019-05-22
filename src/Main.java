@@ -29,7 +29,7 @@ public class Main extends Application {
 */
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("view/sample.fxml"));
-        fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale", new Locale("et","EE")));
+        fxmlLoader.setResources(ResourceBundle.getBundle("bundles.Locale", new Locale("en","AU")));
 
         Parent fxmlMain = fxmlLoader.load();
         Controller homeController = fxmlLoader.getController();
