@@ -12,19 +12,24 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.*;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import src.Const;
 import src.ObjectsTable;
 
-public class HomeController extends Controller implements Initializable {
+public class HomeController extends Controller {
 
     @FXML
     private ResourceBundle resources;
@@ -80,13 +85,15 @@ public class HomeController extends Controller implements Initializable {
     @FXML
     private Menu swe_menu;
 
+    @FXML
+    private Button grafBtn;
 
-    ObservableList<ObjectsTable> oblist = FXCollections.observableArrayList();
+
+    static ObservableList<ObjectsTable> oblist = FXCollections.observableArrayList();
 
     int last_id = 0;
 
     Connection dbconnection;
-    private ResourceBundle resourceBundle;
 
     public Connection getDbconnection() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -94,11 +101,10 @@ public class HomeController extends Controller implements Initializable {
         return dbconnection;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        this.resourceBundle=resources;
+    @FXML
+    void initialize() {
 
-        hello_label.setText(resources.getString("key.app.greeting")+"," + current_user_creator);
+        hello_label.setText("Привет, " + current_user_creator);
 
 
         try {
@@ -237,6 +243,79 @@ public class HomeController extends Controller implements Initializable {
                 stage = new Stage();
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setScene(new Scene(root1));
+                stage.show();
+            }
+        });
+
+        grafBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = (Stage) grafBtn.getScene().getWindow();
+                stage.close();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/graf.fxml"));
+                Parent root1 = null;
+                try {
+                    root1 = (Parent) fxmlLoader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(new Scene(root1));
+
+
+                Group root = new Group();
+                Canvas canvas = new Canvas(500, 300);
+                GraphicsContext gc = canvas.getGraphicsContext2D();
+                GraphicsContext pc = canvas.getGraphicsContext2D();
+                Stop[] stops1;
+                Stop[] stops2;
+                LinearGradient gradient1;
+                LinearGradient gradient2;
+                for (int i = 0; i < oblist.size(); i++) {
+                    if (oblist.get(i).getName().contains("Страшный зверь")) {
+
+                        gc.beginPath();
+                        stops1 = new Stop[]{new Stop(0, Color.RED), new Stop(1, Color.BLACK)};
+                        gradient1 = new LinearGradient(0, 0, 1, 1, true, CycleMethod.NO_CYCLE, stops1);
+                        gc.setFill(gradient1);
+                        gc.fillOval((i+3)*80, i*50, 40, 40);
+                        gc.fill();
+                        gc.setStroke(Color.WHITE);
+                    }
+
+                    if (oblist.get(i).getName().contains("Неизвестный зверь")) {
+                        pc.beginPath();
+                        stops2 = new Stop[]{new Stop(0, Color.BLUE), new Stop(1, Color.YELLOW)};
+                        gradient2 = new LinearGradient(0, 0, 1, 1, true, CycleMethod.NO_CYCLE, stops2);
+                        pc.setFill(gradient2);
+                        pc.fillOval(i*20, (i+4)*40, 40, 40);
+                        pc.fill();
+                        pc.setStroke(Color.WHITE);
+                        //pc.setFont(Font.font("Arial", 10));
+                        //pc.fillText("ЗВЕРЮГА", 10, 10);
+                    }
+                }
+
+                Label label = new Label();
+                //label.setText();
+                label.setOnMouseEntered(event2 -> {
+                    label.setScaleX(1.5);
+                    label.setScaleY(1.5);
+                    pc.setStroke(Color.BLACK);
+                    //Здесь созаем окно с инфой о звере
+                });
+                label.setOnMouseExited(event2 -> {
+                    label.setScaleX(1.5);
+                    label.setScaleY(1.5);
+                    pc.setFill(Color.RED);
+                    //Закрываем окно с инфой о звере
+                });
+                root.getChildren().add(canvas);
+                Scene scene = new Scene(root, 500, 300, Color.GREEN);
+                stage.setScene(scene);
+
                 stage.show();
             }
         });
@@ -392,7 +471,6 @@ public class HomeController extends Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
 
 }
 
